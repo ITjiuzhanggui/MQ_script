@@ -1,0 +1,39 @@
+PyDev console: starting.
+Python 3.6.3 (v3.6.3:2c5fed8, Oct  3 2017, 18:11:49) [MSC v.1900 64 bit (AMD64)] on win32
+mv / etc / systemd / system / docker.service.d / etc / systemd / system / bak - docker.service.d
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+NameError: name 'mv' is not defined
+import pandas as pd
+pd.DataFrame([[1,2,3,4],[5,6,7,8]])
+   0  1  2  3
+0  1  2  3  4
+1  5  6  7  8
+df=pd.DataFrame([[1,2,3,4],[5,6,7,8]],column=list('abcd'))
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: __init__() got an unexpected keyword argument 'column'
+df=pd.DataFrame([[1,2,3,4],[5,6,7,8]],columns=list('abcd'))
+df
+   a  b  c  d
+0  1  2  3  4
+1  5  6  7  8
+df.to_json()
+'{"a":{"0":1,"1":5},"b":{"0":2,"1":6},"c":{"0":3,"1":7},"d":{"0":4,"1":8}}'
+pd.read_excel('').to
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+  File "C:\Users\xinhuizx\AppData\Local\Programs\Python\Python36\lib\site-packages\pandas\util\_decorators.py", line 188, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\xinhuizx\AppData\Local\Programs\Python\Python36\lib\site-packages\pandas\util\_decorators.py", line 188, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\xinhuizx\AppData\Local\Programs\Python\Python36\lib\site-packages\pandas\io\excel.py", line 350, in read_excel
+    io = ExcelFile(io, engine=engine)
+  File "C:\Users\xinhuizx\AppData\Local\Programs\Python\Python36\lib\site-packages\pandas\io\excel.py", line 653, in __init__
+    self._reader = self._engines[engine](self._io)
+  File "C:\Users\xinhuizx\AppData\Local\Programs\Python\Python36\lib\site-packages\pandas\io\excel.py", line 424, in __init__
+    self.book = xlrd.open_workbook(filepath_or_buffer)
+  File "C:\Users\xinhuizx\AppData\Local\Programs\Python\Python36\lib\site-packages\xlrd\__init__.py", line 111, in open_workbook
+    with open(filename, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: ''
+pd.read_excel('').to_csv()

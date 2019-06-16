@@ -1,0 +1,2618 @@
+golang/golang.sh
+[golang] 
+[golang] == golang unit test ==
+[golang] [INFO] Test docker hub official image first:
+[golang] 
+--2019-05-22 14:27:47--  http://www.phoronix-test-suite.com/benchmark-files/golang-benchmarks-121017.tar.gz
+Resolving child-prc.intel.com (child-prc.intel.com)... 10.239.4.160
+Connecting to child-prc.intel.com (child-prc.intel.com)|10.239.4.160|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 950608 (928K) [application/x-gzip]
+Saving to: 'golang-benchmarks-121017.tar.gz'
+
+     0K .......... .......... .......... .......... ..........  5% 10.8K 81s
+    50K .......... .......... .......... .......... .......... 10% 3.33K 2m43s
+   100K .......... .......... .......... .......... .......... 16% 2.54K 3m24s
+   150K .......... .......... .......... .......... .......... 21% 4.62K 3m3s
+   200K .......... .......... .......... .......... .......... 26% 3.14K 2m59s
+   250K .......... .......... .......... .......... .......... 32% 9.15K 2m30s
+   300K .......... .......... .......... .......... .......... 37% 30.1K 2m1s
+   350K .......... .......... .......... .......... .......... 43% 3.52K 1m55s
+   400K .......... .......... .......... .......... .......... 48% 2.82K 1m52s
+   450K .......... .......... .......... .......... .......... 53% 30.6K 91s
+   500K .......... .......... .......... .......... .......... 59% 16.7K 76s
+   550K .......... .......... .......... .......... .......... 64% 3.45K 68s
+   600K .......... .......... .......... .......... .......... 70% 4.61K 58s
+   650K .......... .......... .......... .......... .......... 75% 12.4K 45s
+   700K .......... .......... .......... .......... .......... 80% 11.8K 34s
+   750K .......... .......... .......... .......... .......... 86% 15.4K 24s
+   800K .......... .......... .......... .......... .......... 91% 6.65K 14s
+   850K .......... .......... .......... .......... .......... 96% 11.5K 5s
+   900K .......... .......... ........                        100% 34.3K=2m39s
+
+2019-05-22 14:30:39 (5.83 KB/s) - 'golang-benchmarks-121017.tar.gz' saved [950608/950608]
+
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+2019/05/22 14:30:57 Failed to execute 'perf record [go build -o goperf -a -p 1 cmd/go]': exec: "perf": executable file not found in $PATH
+# sections=/tmp/1.size.txt
+BenchmarkBuild-20        1	17682091565 ns/op	  14613543 binary-size	17682091565 build-ns/op	 242311168 build-peak-RSS-bytes	17704090000 build-user+sys-ns/op
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+2019/05/22 14:30:57 Benchmarking 1 iterations
+consumption=1734KB npkg=15
+2019/05/22 14:30:58 Benchmarking 100 iterations
+2019/05/22 14:30:58 Benchmarking 5000 iterations
+# memprof=/tmp/11.prof.txt
+# cpuprof=/tmp/10.prof.txt
+BenchmarkGarbage/benchmem-MB=64-20     5000	   1045760 ns/op	  14727168 GC-bytes-from-system	    136894 STW-ns/GC	      3039 STW-ns/op	   2782897 allocated-bytes/op	     66273 allocs/op	 361509112 bytes-from-system	 332234752 heap-bytes-from-system	  11237624 other-bytes-from-system	 341966848 peak-RSS-bytes	 398098432 peak-VM-bytes	   3309568 stack-bytes-from-system	  20277520 user+sys-ns/op
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+2019/05/22 14:31:04 Benchmarking 1 iterations
+2019/05/22 14:31:04 Benchmarking 100 iterations
+2019/05/22 14:31:04 Benchmarking 10000 iterations
+2019/05/22 14:31:04 Benchmarking 1000000 iterations
+2019/05/22 14:31:08 Benchmarking 5000000 iterations
+# cpuprof=/tmp/16.prof.txt
+# memprof=/tmp/17.prof.txt
+BenchmarkHTTP-20  5000000	      3663 ns/op	   2402304 GC-bytes-from-system	     72948 P50-ns/op	   1605526 P95-ns/op	   2682478 P99-ns/op	     77685 STW-ns/GC	        36 STW-ns/op	      4805 allocated-bytes/op	        61 allocs/op	  76480760 bytes-from-system	  63111168 heap-bytes-from-system	   6969592 other-bytes-from-system	  72327168 peak-RSS-bytes	1968361472 peak-VM-bytes	   3997696 stack-bytes-from-system	     54183 user+sys-ns/op
+2019/05/22 14:31:27 Benchmarking 1 iterations
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+2019/05/22 14:31:27 Benchmarking 100 iterations
+2019/05/22 14:31:28 Benchmarking 2000 iterations
+# memprof=/tmp/11.prof.txt
+# cpuprof=/tmp/10.prof.txt
+BenchmarkJSON-20     2000	   5141155 ns/op	  12949504 GC-bytes-from-system	    183884 STW-ns/GC	     15446 STW-ns/op	   8199156 allocated-bytes/op	     92683 allocs/op	 355819768 bytes-from-system	 334200832 heap-bytes-from-system	   7325944 other-bytes-from-system	 354467840 peak-RSS-bytes	 392364032 peak-VM-bytes	   1343488 stack-bytes-from-system	  99834430 user+sys-ns/op
+[golang] [INFO] default-Golang-server:
+[golang] 
+[golang] [INFO] Test clear docker image:
+[golang] 
+Downloading packs...
+.
+Extracting wget pack for version 29170
+
+Extracting openssl pack for version 28150
+
+Extracting linux-tools pack for version 29500
+
+Extracting python3-basic pack for version 29440
+
+Extracting c-basic pack for version 29510
+
+Extracting perl-basic pack for version 29270
+
+Extracting nasm pack for version 27210
+
+Extracting binutils pack for version 29510
+
+Extracting bison pack for version 29510
+
+Extracting flex pack for version 28710
+.
+Extracting glibc-locale pack for version 29490
+
+Extracting llvm pack for version 29510
+
+
+Extracting make pack for version 28710
+Starting download of remaining update content. This may take a while...
+......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Finishing download of update content...
+Installing bundle(s) files...
+.........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Calling post-update helper scripts.
+Successfully installed 3 bundles
+--2019-05-22 14:39:22--  http://www.phoronix-test-suite.com/benchmark-files/golang-benchmarks-121017.tar.gz
+Resolving child-prc.intel.com... 10.239.4.80
+Connecting to child-prc.intel.com|10.239.4.80|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 950608 (928K) [application/x-gzip]
+Saving to: 'golang-benchmarks-121017.tar.gz'
+
+     0K .......... .......... .......... .......... ..........  5%  214K 4s
+    50K .......... .......... .......... .......... .......... 10%  218K 4s
+   100K .......... .......... .......... .......... .......... 16% 10.8M 2s
+   150K .......... .......... .......... .......... .......... 21% 11.4M 2s
+   200K .......... .......... .......... .......... .......... 26%  221K 2s
+   250K .......... .......... .......... .......... .......... 32% 9.43M 1s
+   300K .......... .......... .......... .......... .......... 37% 10.8M 1s
+   350K .......... .......... .......... .......... .......... 43% 11.4M 1s
+   400K .......... .......... .......... .......... .......... 48%  235K 1s
+   450K .......... .......... .......... .......... .......... 53% 8.85M 1s
+   500K .......... .......... .......... .......... .......... 59% 11.4M 1s
+   550K .......... .......... .......... .......... .......... 64% 10.7M 1s
+   600K .......... .......... .......... .......... .......... 70% 11.4M 0s
+   650K .......... .......... .......... .......... .......... 75% 10.8M 0s
+   700K .......... .......... .......... .......... .......... 80% 11.4M 0s
+   750K .......... .......... .......... .......... .......... 86% 10.7M 0s
+   800K .......... .......... .......... .......... .......... 91% 11.4M 0s
+   850K .......... .......... .......... .......... .......... 96%  250K 0s
+   900K .......... .......... ........                        100% 10.9M=1.2s
+
+2019-05-22 14:39:23 (797 KB/s) - 'golang-benchmarks-121017.tar.gz' saved [950608/950608]
+
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+# sections=/tmp/1.size.txt
+# processes=/tmp/2.perf.txt
+# cpuprof=/tmp/3.perf.txt
+BenchmarkBuild-20        1	17759001960 ns/op	  14613637 binary-size	17759001960 build-ns/op	 244412416 build-peak-RSS-bytes	17782408000 build-user+sys-ns/op
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+consumption=1734KB npkg=15
+2019/05/22 14:40:01 Benchmarking 1 iterations
+2019/05/22 14:40:01 Benchmarking 100 iterations
+2019/05/22 14:40:01 Benchmarking 5000 iterations
+# memprof=/tmp/11.prof.txt
+# cpuprof=/tmp/10.prof.txt
+BenchmarkGarbage/benchmem-MB=64-20     5000	   1041112 ns/op	  14575616 GC-bytes-from-system	    133746 STW-ns/GC	      2995 STW-ns/op	   2782907 allocated-bytes/op	     66273 allocs/op	 360591608 bytes-from-system	 332005376 heap-bytes-from-system	  10471672 other-bytes-from-system	 323661824 peak-RSS-bytes	 397180928 peak-VM-bytes	   3538944 stack-bytes-from-system	  20197267 user+sys-ns/op
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+2019/05/22 14:40:07 Benchmarking 1 iterations
+2019/05/22 14:40:07 Benchmarking 100 iterations
+2019/05/22 14:40:07 Benchmarking 10000 iterations
+2019/05/22 14:40:08 Benchmarking 1000000 iterations
+2019/05/22 14:40:12 Benchmarking 5000000 iterations
+# memprof=/tmp/17.prof.txt
+# cpuprof=/tmp/16.prof.txt
+BenchmarkHTTP-20  5000000	      3673 ns/op	   2402304 GC-bytes-from-system	     74352 P50-ns/op	   1605764 P95-ns/op	   2677184 P99-ns/op	     78554 STW-ns/GC	        36 STW-ns/op	      4805 allocated-bytes/op	        61 allocs/op	  76480760 bytes-from-system	  63012864 heap-bytes-from-system	   6969592 other-bytes-from-system	  62369792 peak-RSS-bytes	3508060160 peak-VM-bytes	   4096000 stack-bytes-from-system	     54346 user+sys-ns/op
+pkg: golang.org/x/benchmarks
+goos: linux
+goarch: amd64
+
+2019/05/22 14:40:30 Benchmarking 1 iterations
+2019/05/22 14:40:31 Benchmarking 100 iterations
+2019/05/22 14:40:31 Benchmarking 2000 iterations
+# memprof=/tmp/11.prof.txt
+# cpuprof=/tmp/10.prof.txt
+BenchmarkJSON-20     2000	   5021445 ns/op	  15093760 GC-bytes-from-system	    173336 STW-ns/GC	     14906 STW-ns/op	   8303867 allocated-bytes/op	     92683 allocs/op	 424831224 bytes-from-system	 401276928 heap-bytes-from-system	   7084280 other-bytes-from-system	 360931328 peak-RSS-bytes	 461377536 peak-VM-bytes	   1376256 stack-bytes-from-system	  99215432 user+sys-ns/op
+[golang] [INFO] Clr-Golang-server:
+[golang] 
+httpd/httpd.sh
+[httpd] 
+[httpd] == httpd unit test ==
+devpkg-libmicrohttpd
+httpd
+[httpd] [INFO] Test docker hub official image first:
+[httpd] 
+e0e4fa4634628b8242127808533dc9553a3cb49c52d81ed31c04f220c276857d
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:        Apache/2.4.39
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /
+Document Length:        45 bytes
+
+Concurrency Level:      50
+Time taken for tests:   1.266 seconds
+Complete requests:      100000
+Failed requests:        117
+   (Connect: 0, Receive: 0, Length: 117, Exceptions: 0)
+Keep-Alive requests:    98973
+Total transferred:      32422041 bytes
+HTML transferred:       4494735 bytes
+Requests per second:    78983.70 [#/sec] (mean)
+Time per request:       0.633 [ms] (mean)
+Time per request:       0.013 [ms] (mean, across all concurrent requests)
+Transfer rate:          25007.94 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.8      1      45
+Waiting:        0    1   0.8      1      45
+Total:          0    1   0.8      1      46
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%     46 (longest request)
+httpd-server
+[httpd] [INFO] Test clear docker image:
+[httpd] 
+e856564fb6baa925a3b14c09facd795979e6c46b37befa18413f46677f3b2351
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:        Apache/2.4.39
+Server Hostname:        localhost
+Server Port:            8088
+
+Document Path:          /
+Document Length:        45 bytes
+
+Concurrency Level:      50
+Time taken for tests:   1.151 seconds
+Complete requests:      100000
+Failed requests:        99
+   (Connect: 0, Receive: 0, Length: 99, Exceptions: 0)
+Keep-Alive requests:    98977
+Total transferred:      32455196 bytes
+HTML transferred:       4495545 bytes
+Requests per second:    86881.35 [#/sec] (mean)
+Time per request:       0.575 [ms] (mean)
+Time per request:       0.012 [ms] (mean, across all concurrent requests)
+Transfer rate:          27536.63 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   0.8      1      47
+Waiting:        0    1   0.8      1      47
+Total:          0    1   0.8      1      48
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      1
+ 100%     48 (longest request)
+clr-httpd-server
+memcached/memcached.sh
+[memcached] 
+[memcached] == memcached unit test ==
+03cb5c9f2f14        memcached-network   bridge              local
+[memcached] [INFO] Test docker hub official image first:
+[memcached] 
+bb4db7c53f72df4bc22f79a0bcc8ff34c5e9db5515f102551025686594899fd9
+[RUN #1] Preparing benchmark client...
+[RUN #1] Launching threads now...
+[RUN #1 15%,   0 secs]  4 threads:      309668 ops,  375483 (avg:  375483) ops/sec, 10.70MB/sec (avg: 10.70MB/sec),  0.53 (avg:  0.53) msec latency[RUN #1 31%,   1 secs]  4 threads:      629664 ops,  322003 (avg:  346257) ops/sec, 9.18MB/sec (avg: 9.87MB/sec),  0.62 (avg:  0.58) msec latency[RUN #1 47%,   2 secs]  4 threads:      949364 ops,  319668 (avg:  336823) ops/sec, 9.11MB/sec (avg: 9.60MB/sec),  0.63 (avg:  0.59) msec latency[RUN #1 63%,   3 secs]  4 threads:     1268977 ops,  320015 (avg:  332425) ops/sec, 9.12MB/sec (avg: 9.48MB/sec),  0.62 (avg:  0.60) msec latency[RUN #1 79%,   4 secs]  4 threads:     1588000 ops,  344855 (avg:  334850) ops/sec, 9.83MB/sec (avg: 9.55MB/sec),  0.58 (avg:  0.60) msec latency[RUN #1 95%,   5 secs]  4 threads:     1907371 ops,  345233 (avg:  336545) ops/sec, 9.84MB/sec (avg: 9.59MB/sec),  0.58 (avg:  0.59) msec latency[RUN #1 100%,   5 secs]  0 threads:     2000000 ops,  345233 (avg:  336903) ops/sec, 9.84MB/sec (avg: 9.60MB/sec),  0.58 (avg:  0.59) msec latency
+
+4         Threads
+50        Connections per thread
+10000     Requests per client
+
+
+ALL STATS
+=========================================================================
+Type         Ops/sec     Hits/sec   Misses/sec      Latency       KB/sec 
+-------------------------------------------------------------------------
+Sets        43727.39          ---          ---      0.61400      2983.45 
+Gets       436793.38         0.00    436793.38      0.59000     11043.20 
+Waits           0.00          ---          ---      0.00000          --- 
+Totals     480520.77         0.00    436793.38      0.59300     14026.65 
+
+
+Request Latency Distribution
+Type     <= msec         Percent
+------------------------------------------------------------------------
+SET       0.059         0.00
+SET       0.080         0.00
+SET       0.084         0.00
+SET       0.097         0.00
+SET       0.110         0.00
+SET       0.120         0.00
+SET       0.130         0.01
+SET       0.140         0.01
+SET       0.150         0.01
+SET       0.170         0.07
+SET       0.180         1.22
+SET       0.190         3.48
+SET       0.200         3.81
+SET       0.210         3.83
+SET       0.220         3.83
+SET       0.230         3.85
+SET       0.240         3.91
+SET       0.250         3.97
+SET       0.260         3.97
+SET       0.270         3.97
+SET       0.280         3.98
+SET       0.300         3.98
+SET       0.310         3.98
+SET       0.320         3.98
+SET       0.330         3.98
+SET       0.340         3.98
+SET       0.350         3.99
+SET       0.360         3.99
+SET       0.370         3.99
+SET       0.380         4.00
+SET       0.390         4.00
+SET       0.400         4.01
+SET       0.410         4.02
+SET       0.420         4.29
+SET       0.430         6.77
+SET       0.440        11.39
+SET       0.450        13.02
+SET       0.460        13.22
+SET       0.470        13.24
+SET       0.480        13.25
+SET       0.490        13.25
+SET       0.500        13.26
+SET       0.510        13.27
+SET       0.520        13.28
+SET       0.530        13.29
+SET       0.540        13.29
+SET       0.550        13.30
+SET       0.560        13.30
+SET       0.570        13.31
+SET       0.580        13.33
+SET       0.590        13.38
+SET       0.600        13.88
+SET       0.610        18.19
+SET       0.620        39.10
+SET       0.630        75.52
+SET       0.640        95.03
+SET       0.650        98.90
+SET       0.660        99.37
+SET       0.670        99.46
+SET       0.680        99.51
+SET       0.690        99.54
+SET       0.700        99.57
+SET       0.710        99.59
+SET       0.720        99.60
+SET       0.730        99.61
+SET       0.740        99.62
+SET       0.750        99.63
+SET       0.760        99.63
+SET       0.770        99.64
+SET       0.780        99.65
+SET       0.790        99.65
+SET       0.800        99.65
+SET       0.810        99.67
+SET       0.820        99.71
+SET       0.830        99.81
+SET       0.840        99.87
+SET       0.850        99.90
+SET       0.860        99.90
+SET       0.870        99.90
+SET       0.880        99.90
+SET       0.890        99.90
+SET       0.900        99.90
+SET       0.910        99.91
+SET       0.920        99.91
+SET       0.930        99.91
+SET       0.950        99.91
+SET       0.960        99.91
+SET       0.970        99.91
+SET       1.000        99.91
+SET       1.100        99.93
+SET       1.200        99.93
+SET      11.000        99.94
+SET      12.000        99.96
+SET      46.000       100.00
+---
+GET       0.100         0.00
+GET       0.110         0.00
+GET       0.130         0.00
+GET       0.150         0.00
+GET       0.160         0.00
+GET       0.170         0.12
+GET       0.180         1.74
+GET       0.190         3.62
+GET       0.200         3.81
+GET       0.210         3.82
+GET       0.220         3.83
+GET       0.230         3.87
+GET       0.240         3.93
+GET       0.250         3.96
+GET       0.260         3.96
+GET       0.270         3.96
+GET       0.280         3.97
+GET       0.290         3.97
+GET       0.300         3.97
+GET       0.310         3.97
+GET       0.320         3.97
+GET       0.330         3.97
+GET       0.340         3.97
+GET       0.350         3.97
+GET       0.360         3.97
+GET       0.370         3.97
+GET       0.390         3.97
+GET       0.400         3.97
+GET       0.410         4.01
+GET       0.420         4.76
+GET       0.430         8.72
+GET       0.440        12.43
+GET       0.450        13.15
+GET       0.460        13.21
+GET       0.470        13.22
+GET       0.480        13.22
+GET       0.490        13.22
+GET       0.500        13.22
+GET       0.510        13.22
+GET       0.520        13.22
+GET       0.530        13.23
+GET       0.540        13.23
+GET       0.550        13.23
+GET       0.560        13.23
+GET       0.570        13.24
+GET       0.580        13.25
+GET       0.590        13.36
+GET       0.600        14.50
+GET       0.610        23.38
+GET       0.620        54.05
+GET       0.630        86.88
+GET       0.640        97.75
+GET       0.650        99.27
+GET       0.660        99.47
+GET       0.670        99.54
+GET       0.680        99.59
+GET       0.690        99.62
+GET       0.700        99.64
+GET       0.710        99.66
+GET       0.720        99.67
+GET       0.730        99.69
+GET       0.740        99.69
+GET       0.750        99.70
+GET       0.760        99.71
+GET       0.770        99.72
+GET       0.780        99.72
+GET       0.790        99.73
+GET       0.800        99.76
+GET       0.810        99.81
+GET       0.820        99.88
+GET       0.830        99.94
+GET       0.840        99.97
+GET       0.850        99.98
+GET       0.860        99.98
+GET       0.870        99.98
+GET       0.880        99.99
+GET       0.890        99.99
+GET       0.900        99.99
+GET       0.910        99.99
+GET       0.920        99.99
+GET       0.930        99.99
+GET       0.940        99.99
+GET       0.950        99.99
+GET       0.960        99.99
+GET       0.970        99.99
+GET       0.980        99.99
+GET       0.990        99.99
+GET       1.000        99.99
+GET       1.100       100.00
+GET       1.200       100.00
+---
+memcached-server
+[memcached] [INFO] Test clear docker image:
+[memcached] 
+b6da4328268cca0f08cfb2f6f96a880ecb29e409e19aaeec9604fdb02a8d0d6c
+[RUN #1] Preparing benchmark client...
+[RUN #1] Launching threads now...
+[RUN #1 16%,   0 secs]  4 threads:      319624 ops,  319740 (avg:  319740) ops/sec, 9.12MB/sec (avg: 9.12MB/sec),  0.62 (avg:  0.62) msec latency[RUN #1 32%,   1 secs]  4 threads:      641596 ops,  321943 (avg:  320842) ops/sec, 9.17MB/sec (avg: 9.15MB/sec),  0.62 (avg:  0.62) msec latency[RUN #1 48%,   2 secs]  4 threads:      962343 ops,  320716 (avg:  320800) ops/sec, 9.14MB/sec (avg: 9.15MB/sec),  0.62 (avg:  0.62) msec latency[RUN #1 64%,   3 secs]  4 threads:     1283572 ops,  321197 (avg:  320899) ops/sec, 9.15MB/sec (avg: 9.15MB/sec),  0.62 (avg:  0.62) msec latency[RUN #1 80%,   5 secs]  4 threads:     1603519 ops,  319915 (avg:  320702) ops/sec, 9.12MB/sec (avg: 9.14MB/sec),  0.62 (avg:  0.62) msec latency[RUN #1 96%,   6 secs]  4 threads:     1923271 ops,  319721 (avg:  320539) ops/sec, 9.11MB/sec (avg: 9.14MB/sec),  0.62 (avg:  0.62) msec latency[RUN #1 100%,   6 secs]  0 threads:     2000000 ops,  319721 (avg:  320537) ops/sec, 9.11MB/sec (avg: 9.14MB/sec),  0.62 (avg:  0.62) msec latency
+
+4         Threads
+50        Connections per thread
+10000     Requests per client
+
+
+ALL STATS
+=========================================================================
+Type         Ops/sec     Hits/sec   Misses/sec      Latency       KB/sec 
+-------------------------------------------------------------------------
+Sets        29216.77          ---          ---      0.62600      1993.41 
+Gets       291846.60         0.00    291846.60      0.62300      7378.59 
+Waits           0.00          ---          ---      0.00000          --- 
+Totals     321063.36         0.00    291846.60      0.62300      9372.01 
+
+
+Request Latency Distribution
+Type     <= msec         Percent
+------------------------------------------------------------------------
+SET       0.062         0.00
+SET       0.063         0.00
+SET       0.068         0.00
+SET       0.072         0.00
+SET       0.077         0.00
+SET       0.081         0.00
+SET       0.088         0.01
+SET       0.090         0.01
+SET       0.091         0.01
+SET       0.096         0.01
+SET       0.110         0.01
+SET       0.120         0.01
+SET       0.130         0.02
+SET       0.140         0.02
+SET       0.150         0.02
+SET       0.160         0.03
+SET       0.220         0.03
+SET       0.230         0.03
+SET       0.240         0.03
+SET       0.250         0.03
+SET       0.260         0.03
+SET       0.270         0.03
+SET       0.280         0.03
+SET       0.290         0.04
+SET       0.300         0.04
+SET       0.310         0.05
+SET       0.330         0.05
+SET       0.340         0.05
+SET       0.350         0.06
+SET       0.360         0.06
+SET       0.370         0.06
+SET       0.380         0.06
+SET       0.390         0.06
+SET       0.400         0.07
+SET       0.410         0.07
+SET       0.420         0.07
+SET       0.430         0.07
+SET       0.440         0.08
+SET       0.450         0.10
+SET       0.460         0.14
+SET       0.470         0.17
+SET       0.480         0.21
+SET       0.490         0.23
+SET       0.500         0.24
+SET       0.510         0.24
+SET       0.520         0.25
+SET       0.530         0.26
+SET       0.540         0.27
+SET       0.550         0.29
+SET       0.560         0.30
+SET       0.570         0.31
+SET       0.580         0.34
+SET       0.590         0.50
+SET       0.600         1.78
+SET       0.610        10.72
+SET       0.620        44.95
+SET       0.630        83.73
+SET       0.640        96.61
+SET       0.650        98.56
+SET       0.660        98.86
+SET       0.670        98.99
+SET       0.680        99.14
+SET       0.690        99.25
+SET       0.700        99.34
+SET       0.710        99.39
+SET       0.720        99.44
+SET       0.730        99.49
+SET       0.740        99.52
+SET       0.750        99.55
+SET       0.760        99.56
+SET       0.770        99.58
+SET       0.780        99.59
+SET       0.790        99.62
+SET       0.800        99.65
+SET       0.810        99.72
+SET       0.820        99.80
+SET       0.830        99.88
+SET       0.840        99.92
+SET       0.850        99.94
+SET       0.860        99.95
+SET       0.870        99.95
+SET       0.880        99.95
+SET       0.890        99.96
+SET       0.900        99.96
+SET       0.910        99.96
+SET       0.920        99.97
+SET       0.930        99.97
+SET       0.940        99.97
+SET       0.950        99.97
+SET       0.960        99.97
+SET       0.970        99.98
+SET       0.990        99.98
+SET       1.000        99.99
+SET       1.100       100.00
+SET       1.200       100.00
+SET       1.300       100.00
+---
+GET       0.120         0.00
+GET       0.130         0.00
+GET       0.140         0.00
+GET       0.150         0.01
+GET       0.160         0.02
+GET       0.170         0.02
+GET       0.180         0.02
+GET       0.190         0.02
+GET       0.200         0.02
+GET       0.210         0.02
+GET       0.220         0.02
+GET       0.230         0.02
+GET       0.240         0.02
+GET       0.250         0.02
+GET       0.260         0.02
+GET       0.270         0.02
+GET       0.280         0.02
+GET       0.290         0.02
+GET       0.300         0.02
+GET       0.310         0.03
+GET       0.320         0.03
+GET       0.330         0.03
+GET       0.340         0.03
+GET       0.350         0.03
+GET       0.360         0.03
+GET       0.370         0.03
+GET       0.380         0.03
+GET       0.390         0.03
+GET       0.400         0.03
+GET       0.410         0.03
+GET       0.420         0.03
+GET       0.430         0.03
+GET       0.440         0.04
+GET       0.450         0.07
+GET       0.460         0.10
+GET       0.470         0.11
+GET       0.480         0.12
+GET       0.490         0.12
+GET       0.500         0.13
+GET       0.510         0.13
+GET       0.520         0.14
+GET       0.530         0.14
+GET       0.540         0.15
+GET       0.550         0.15
+GET       0.560         0.16
+GET       0.570         0.17
+GET       0.580         0.21
+GET       0.590         0.58
+GET       0.600         3.39
+GET       0.610        19.73
+GET       0.620        61.57
+GET       0.630        91.28
+GET       0.640        97.82
+GET       0.650        98.67
+GET       0.660        98.87
+GET       0.670        99.03
+GET       0.680        99.17
+GET       0.690        99.29
+GET       0.700        99.39
+GET       0.710        99.46
+GET       0.720        99.50
+GET       0.730        99.53
+GET       0.740        99.55
+GET       0.750        99.57
+GET       0.760        99.58
+GET       0.770        99.59
+GET       0.780        99.61
+GET       0.790        99.64
+GET       0.800        99.72
+GET       0.810        99.81
+GET       0.820        99.89
+GET       0.830        99.94
+GET       0.840        99.96
+GET       0.850        99.97
+GET       0.860        99.97
+GET       0.870        99.98
+GET       0.880        99.98
+GET       0.890        99.98
+GET       0.900        99.98
+GET       0.910        99.98
+GET       0.920        99.98
+GET       0.930        99.98
+GET       0.940        99.98
+GET       0.950        99.98
+GET       0.960        99.98
+GET       0.970        99.98
+GET       0.980        99.98
+GET       0.990        99.98
+GET       1.000        99.99
+GET       1.100        99.99
+GET       1.200       100.00
+GET       6.200       100.00
+GET       6.300       100.00
+GET       6.400       100.00
+GET       6.500       100.00
+GET       6.600       100.00
+GET       6.700       100.00
+---
+cl-memcached-server
+nginx/nginx.sh
+[nginx] 
+[nginx] == nginx unit test ==
+devpkg-libmicrohttpd
+httpd
+[nginx] [INFO] Test docker hub official image first:
+[nginx] 
+26b1382661a09d8d29357b72e41fb4938763239bd531cfa00d441519f4c9bb2d
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:        nginx/1.15.12
+Server Hostname:        localhost
+Server Port:            8080
+
+Document Path:          /
+Document Length:        612 bytes
+
+Concurrency Level:      50
+Time taken for tests:   2.311 seconds
+Complete requests:      100000
+Failed requests:        0
+Keep-Alive requests:    99033
+Total transferred:      85095165 bytes
+HTML transferred:       61200000 bytes
+Requests per second:    43274.10 [#/sec] (mean)
+Time per request:       1.155 [ms] (mean)
+Time per request:       0.023 [ms] (mean, across all concurrent requests)
+Transfer rate:          35961.10 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    1   1.0      1      54
+Waiting:        0    1   1.0      1      54
+Total:          0    1   1.0      1      54
+
+Percentage of the requests served within a certain time (ms)
+  50%      1
+  66%      1
+  75%      1
+  80%      1
+  90%      1
+  95%      1
+  98%      1
+  99%      2
+ 100%     54 (longest request)
+nginx-server
+[nginx] [INFO] Test clear docker image:
+[nginx] 
+bd05b349431aaf08265795f6388b8119f0f127ac1469ac9682781d51bfbd87d9
+This is ApacheBench, Version 2.3 <$Revision: 1843412 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 10000 requests
+Completed 20000 requests
+Completed 30000 requests
+Completed 40000 requests
+Completed 50000 requests
+Completed 60000 requests
+Completed 70000 requests
+Completed 80000 requests
+Completed 90000 requests
+Completed 100000 requests
+Finished 100000 requests
+
+
+Server Software:        nginx/1.14.2
+Server Hostname:        localhost
+Server Port:            8088
+
+Document Path:          /
+Document Length:        794 bytes
+
+Concurrency Level:      50
+Time taken for tests:   0.712 seconds
+Complete requests:      100000
+Failed requests:        0
+Keep-Alive requests:    99026
+Total transferred:      103195130 bytes
+HTML transferred:       79400000 bytes
+Requests per second:    140416.70 [#/sec] (mean)
+Time per request:       0.356 [ms] (mean)
+Time per request:       0.007 [ms] (mean, across all concurrent requests)
+Transfer rate:          141507.03 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        0    0   0.0      0       1
+Processing:     0    0   0.9      0      61
+Waiting:        0    0   0.9      0      61
+Total:          0    0   0.9      0      61
+
+Percentage of the requests served within a certain time (ms)
+  50%      0
+  66%      0
+  75%      0
+  80%      0
+  90%      0
+  95%      1
+  98%      1
+  99%      1
+ 100%     61 (longest request)
+clr-nginx-server
+node/node.sh
+[node] 
+[node] == node unit test ==
+[node] [INFO] Test docker hub official image first:
+[node] 
+Ign:1 http://cdn-fastly.deb.debian.org/debian stretch InRelease
+Get:2 http://cdn-fastly.deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:3 http://cdn-fastly.deb.debian.org/debian stretch Release [118 kB]
+Get:4 http://security-cdn.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:5 http://cdn-fastly.deb.debian.org/debian stretch-updates/main amd64 Packages [27.2 kB]
+Get:6 http://cdn-fastly.deb.debian.org/debian stretch Release.gpg [2434 B]
+Get:7 http://security-cdn.debian.org/debian-security stretch/updates/main amd64 Packages [492 kB]
+Get:8 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 Packages [7082 kB]
+Fetched 7907 kB in 5s (1382 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+unzip is already the newest version (6.0-21+deb9u1).
+wget is already the newest version (1.18-5+deb9u3).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+--2019-05-22 14:41:45--  http://phoronix-test-suite.com/benchmark-files/benchmark-octane-20181001.zip
+Resolving child-prc.intel.com (child-prc.intel.com)... 10.239.4.160
+Connecting to child-prc.intel.com (child-prc.intel.com)|10.239.4.160|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 1986184 (1.9M) [application/zip]
+Saving to: 'benchmark-octane-20181001.zip'
+
+     0K .......... .......... .......... .......... ..........  2% 92.2K 20s
+    50K .......... .......... .......... .......... ..........  5% 37.6K 34s
+   100K .......... .......... .......... .......... ..........  7% 62.1K 32s
+   150K .......... .......... .......... .......... .......... 10% 46.4K 33s
+   200K .......... .......... .......... .......... .......... 12% 46.4K 33s
+   250K .......... .......... .......... .......... .......... 15% 63.1K 31s
+   300K .......... .......... .......... .......... .......... 18% 63.1K 29s
+   350K .......... .......... .......... .......... .......... 20% 46.4K 29s
+   400K .......... .......... .......... .......... .......... 23% 48.4K 28s
+   450K .......... .......... .......... .......... .......... 25% 62.6K 27s
+   500K .......... .......... .......... .......... .......... 28% 45.4K 26s
+   550K .......... .......... .......... .......... .......... 30% 48.8K 26s
+   600K .......... .......... .......... .......... .......... 33% 59.9K 24s
+   650K .......... .......... .......... .......... .......... 36% 48.3K 24s
+   700K .......... .......... .......... .......... .......... 38% 62.2K 22s
+   750K .......... .......... .......... .......... .......... 41% 62.0K 21s
+   800K .......... .......... .......... .......... .......... 43% 63.2K 20s
+   850K .......... .......... .......... .......... .......... 46% 91.4K 19s
+   900K .......... .......... .......... .......... .......... 48% 93.8K 18s
+   950K .......... .......... .......... .......... .......... 51% 89.3K 16s
+  1000K .......... .......... .......... .......... .......... 54% 68.6K 15s
+  1050K .......... .......... .......... .......... .......... 56% 84.8K 14s
+  1100K .......... .......... .......... .......... .......... 59% 90.4K 13s
+  1150K .......... .......... .......... .......... .......... 61% 47.7K 13s
+  1200K .......... .......... .......... .......... .......... 64%  176K 11s
+  1250K .......... .......... .......... .......... .......... 67% 64.0K 11s
+  1300K .......... .......... .......... .......... .......... 69% 67.8K 10s
+  1350K .......... .......... .......... .......... .......... 72% 79.9K 9s
+  1400K .......... .......... .......... .......... .......... 74% 51.3K 8s
+  1450K .......... .......... .......... .......... .......... 77% 56.9K 7s
+  1500K .......... .......... .......... .......... .......... 79% 47.5K 6s
+  1550K .......... .......... .......... .......... .......... 82% 28.3K 6s
+  1600K .......... .......... .......... .......... .......... 85% 46.4K 5s
+  1650K .......... .......... .......... .......... .......... 87% 44.3K 4s
+  1700K .......... .......... .......... .......... .......... 90% 61.5K 3s
+  1750K .......... .......... .......... .......... .......... 92% 94.0K 2s
+  1800K .......... .......... .......... .......... .......... 95% 90.2K 2s
+  1850K .......... .......... .......... .......... .......... 97% 96.2K 1s
+  1900K .......... .......... .......... .........            100% 19.3K=34s
+
+2019-05-22 14:42:19 (56.9 KB/s) - 'benchmark-octane-20181001.zip' saved [1986184/1986184]
+
+Archive:  benchmark-octane-20181001.zip
+ecbfa1b33ddc294401f97f2cf87c94434fefb097
+   creating: benchmark-octane-master/
+ extracting: benchmark-octane-master/.gitignore  
+  inflating: benchmark-octane-master/README.md  
+   creating: benchmark-octane-master/bin/
+ extracting: benchmark-octane-master/bin/benchmark-octane  
+ extracting: benchmark-octane-master/index.js  
+   creating: benchmark-octane-master/lib/
+  inflating: benchmark-octane-master/lib/octane.js  
+   creating: benchmark-octane-master/lib/octane/
+  inflating: benchmark-octane-master/lib/octane/base.js  
+  inflating: benchmark-octane-master/lib/octane/box2d.js  
+  inflating: benchmark-octane-master/lib/octane/code-load.js  
+  inflating: benchmark-octane-master/lib/octane/crypto.js  
+   creating: benchmark-octane-master/lib/octane/css/
+  inflating: benchmark-octane-master/lib/octane/css/bootstrap-responsive.css  
+  inflating: benchmark-octane-master/lib/octane/css/bootstrap.css  
+  inflating: benchmark-octane-master/lib/octane/css/docs.css  
+  inflating: benchmark-octane-master/lib/octane/deltablue.js  
+  inflating: benchmark-octane-master/lib/octane/earley-boyer.js  
+  inflating: benchmark-octane-master/lib/octane/gbemu-part1.js  
+  inflating: benchmark-octane-master/lib/octane/gbemu-part2.js  
+   creating: benchmark-octane-master/lib/octane/ico/
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-114-precomposed.png  
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-144-precomposed.png  
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-57-precomposed.png  
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-72-precomposed.png  
+  inflating: benchmark-octane-master/lib/octane/ico/favicon.ico  
+  inflating: benchmark-octane-master/lib/octane/index.html  
+   creating: benchmark-octane-master/lib/octane/js/
+  inflating: benchmark-octane-master/lib/octane/js/bootstrap-collapse.js  
+  inflating: benchmark-octane-master/lib/octane/js/bootstrap-transition.js  
+  inflating: benchmark-octane-master/lib/octane/js/jquery.js  
+  inflating: benchmark-octane-master/lib/octane/mandreel.js  
+  inflating: benchmark-octane-master/lib/octane/navier-stokes.js  
+  inflating: benchmark-octane-master/lib/octane/pdfjs.js  
+  inflating: benchmark-octane-master/lib/octane/raytrace.js  
+  inflating: benchmark-octane-master/lib/octane/regexp.js  
+  inflating: benchmark-octane-master/lib/octane/richards.js  
+  inflating: benchmark-octane-master/lib/octane/run.js  
+  inflating: benchmark-octane-master/lib/octane/splay.js  
+  inflating: benchmark-octane-master/lib/octane/typescript-compiler.js  
+  inflating: benchmark-octane-master/lib/octane/typescript-input.js  
+  inflating: benchmark-octane-master/lib/octane/typescript.js  
+  inflating: benchmark-octane-master/lib/octane/zlib-data.js  
+  inflating: benchmark-octane-master/lib/octane/zlib.js  
+  inflating: benchmark-octane-master/package.json  
+  inflating: benchmark-octane-master/run.js  
+    hostname     : fcd3c1350b13
+    node version : v12.2.0
+      V8 version : 7.4.288.21-node.17
+ platform & arch : linux x64
+
+ config : {
+  target_defaults: {
+    cflags: [],
+    default_configuration: [32m'Release'[39m,
+    defines: [],
+    include_dirs: [],
+    libraries: []
+  },
+  variables: {
+    asan: [33m0[39m,
+    build_v8_with_gn: [33mfalse[39m,
+    coverage: [33mfalse[39m,
+    debug_nghttp2: [33mfalse[39m,
+    enable_lto: [33mfalse[39m,
+    enable_pgo_generate: [33mfalse[39m,
+    enable_pgo_use: [33mfalse[39m,
+    force_dynamic_crt: [33m0[39m,
+    gas_version: [32m'2.27'[39m,
+    host_arch: [32m'x64'[39m,
+    icu_data_in: [32m'../../deps/icu-small/source/data/in/icudt64l.dat'[39m,
+    icu_endianness: [32m'l'[39m,
+    icu_gyp_path: [32m'tools/icu/icu-generic.gyp'[39m,
+    icu_locales: [32m'en,root'[39m,
+    icu_path: [32m'deps/icu-small'[39m,
+    icu_small: [33mtrue[39m,
+    icu_ver_major: [32m'64'[39m,
+    llvm_version: [33m0[39m,
+    node_byteorder: [32m'little'[39m,
+    node_code_cache_path: [32m'yes'[39m,
+    node_debug_lib: [33mfalse[39m,
+    node_enable_d8: [33mfalse[39m,
+    node_enable_v8_vtunejit: [33mfalse[39m,
+    node_install_npm: [33mtrue[39m,
+    node_module_version: [33m72[39m,
+    node_no_browser_globals: [33mfalse[39m,
+    node_prefix: [32m'/'[39m,
+    node_release_urlbase: [32m'https://nodejs.org/download/release/'[39m,
+    node_report: [33mtrue[39m,
+    node_shared: [33mfalse[39m,
+    node_shared_cares: [33mfalse[39m,
+    node_shared_http_parser: [33mfalse[39m,
+    node_shared_libuv: [33mfalse[39m,
+    node_shared_nghttp2: [33mfalse[39m,
+    node_shared_openssl: [33mfalse[39m,
+    node_shared_zlib: [33mfalse[39m,
+    node_tag: [32m''[39m,
+    node_target_type: [32m'executable'[39m,
+    node_use_bundled_v8: [33mtrue[39m,
+    node_use_dtrace: [33mfalse[39m,
+    node_use_etw: [33mfalse[39m,
+    node_use_large_pages: [33mfalse[39m,
+    node_use_node_snapshot: [33mfalse[39m,
+    node_use_openssl: [33mtrue[39m,
+    node_use_v8_platform: [33mtrue[39m,
+    node_with_ltcg: [33mfalse[39m,
+    node_without_node_options: [33mfalse[39m,
+    openssl_fips: [32m''[39m,
+    openssl_is_fips: [33mfalse[39m,
+    shlib_suffix: [32m'so.72'[39m,
+    target_arch: [32m'x64'[39m,
+    v8_enable_gdbjit: [33m0[39m,
+    v8_enable_i18n_support: [33m1[39m,
+    v8_enable_inspector: [33m1[39m,
+    v8_no_strict_aliasing: [33m1[39m,
+    v8_optimized_debug: [33m1[39m,
+    v8_promise_internal_field_count: [33m1[39m,
+    v8_random_seed: [33m0[39m,
+    v8_trace_maps: [33m0[39m,
+    v8_use_siphash: [33m1[39m,
+    v8_use_snapshot: [33m1[39m,
+    want_separate_host_toolset: [33m0[39m
+  }
+}
+
+Richards            : 23116
+DeltaBlue           : 57648
+Crypto              : 44915
+RayTrace            : 88725
+EarleyBoyer         : 41656
+RegExp              : 7133
+Splay               : 28864
+SplayLatency        : 49674
+NavierStokes        : 41552
+PdfJS               : 26933
+Mandreel            : 34185
+MandreelLatency     : 43730
+Gameboy             : 38697
+CodeLoad            : 30289
+Box2D               : 78232
+zlib                : 74363
+Typescript          : 47755
+----
+Score (version 9): 39226
+ duration  31.530596805  seconds
+(node:205) [DEP0016] DeprecationWarning: 'GLOBAL' is deprecated, use 'global'
+[node] [INFO] default-Node-server:
+[node] 
+[node] [INFO] Test clear docker image:
+[node] 
+Downloading packs...
+.
+Extracting wget pack for version 29170
+
+Extracting openssl pack for version 28150
+
+
+Extracting unzip pack for version 27670
+Starting download of remaining update content. This may take a while...
+........Finishing download of update content...
+
+Installing bundle(s) files...
+................
+Calling post-update helper scripts.
+Successfully installed 2 bundles
+--2019-05-22 14:43:04--  http://phoronix-test-suite.com/benchmark-files/benchmark-octane-20181001.zip
+Resolving child-prc.intel.com... 10.239.4.160
+Connecting to child-prc.intel.com|10.239.4.160|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 1986184 (1.9M) [application/zip]
+Saving to: 'benchmark-octane-20181001.zip'
+
+     0K .......... .......... .......... .......... ..........  2%  207K 9s
+    50K .......... .......... .......... .......... ..........  5% 71.4K 17s
+   100K .......... .......... .......... .......... ..........  7% 69.9K 20s
+   150K .......... .......... .......... .......... .......... 10% 71.0K 21s
+   200K .......... .......... .......... .......... .......... 12% 53.1K 22s
+   250K .......... .......... .......... .......... .......... 15% 53.5K 23s
+   300K .......... .......... .......... .......... .......... 18% 33.5K 26s
+   350K .......... .......... .......... .......... .......... 20% 40.9K 27s
+   400K .......... .......... .......... .......... .......... 23% 51.2K 26s
+   450K .......... .......... .......... .......... .......... 25% 69.9K 25s
+   500K .......... .......... .......... .......... .......... 28% 69.9K 24s
+   550K .......... .......... .......... .......... .......... 30% 55.8K 23s
+   600K .......... .......... .......... .......... .......... 33% 66.4K 22s
+   650K .......... .......... .......... .......... .......... 36% 69.8K 21s
+   700K .......... .......... .......... .......... .......... 38% 70.0K 20s
+   750K .......... .......... .......... .......... .......... 41% 70.5K 19s
+   800K .......... .......... .......... .......... .......... 43% 53.4K 18s
+   850K .......... .......... .......... .......... .......... 46%  106K 17s
+   900K .......... .......... .......... .......... .......... 48% 42.9K 16s
+   950K .......... .......... .......... .......... .......... 51% 30.8K 16s
+  1000K .......... .......... .......... .......... .......... 54% 35.5K 16s
+  1050K .......... .......... .......... .......... .......... 56% 53.7K 15s
+  1100K .......... .......... .......... .......... .......... 59% 69.9K 14s
+  1150K .......... .......... .......... .......... .......... 61% 70.5K 13s
+  1200K .......... .......... .......... .......... .......... 64%  107K 12s
+  1250K .......... .......... .......... .......... .......... 67%  104K 11s
+  1300K .......... .......... .......... .......... .......... 69% 68.6K 10s
+  1350K .......... .......... .......... .......... .......... 72%  107K 9s
+  1400K .......... .......... .......... .......... .......... 74%  105K 8s
+  1450K .......... .......... .......... .......... .......... 77% 71.1K 7s
+  1500K .......... .......... .......... .......... .......... 79% 71.1K 6s
+  1550K .......... .......... .......... .......... .......... 82% 69.0K 5s
+  1600K .......... .......... .......... .......... .......... 85% 69.5K 5s
+  1650K .......... .......... .......... .......... .......... 87% 68.5K 4s
+  1700K .......... .......... .......... .......... .......... 90% 69.4K 3s
+  1750K .......... .......... .......... .......... .......... 92% 69.4K 2s
+  1800K .......... .......... .......... .......... .......... 95% 52.6K 1s
+  1850K .......... .......... .......... .......... .......... 97% 71.1K 1s
+  1900K .......... .......... .......... .........            100% 85.2K=31s
+
+2019-05-22 14:43:35 (62.8 KB/s) - 'benchmark-octane-20181001.zip' saved [1986184/1986184]
+
+Archive:  benchmark-octane-20181001.zip
+ecbfa1b33ddc294401f97f2cf87c94434fefb097
+   creating: benchmark-octane-master/
+ extracting: benchmark-octane-master/.gitignore  
+  inflating: benchmark-octane-master/README.md  
+   creating: benchmark-octane-master/bin/
+ extracting: benchmark-octane-master/bin/benchmark-octane  
+ extracting: benchmark-octane-master/index.js  
+   creating: benchmark-octane-master/lib/
+  inflating: benchmark-octane-master/lib/octane.js  
+   creating: benchmark-octane-master/lib/octane/
+  inflating: benchmark-octane-master/lib/octane/base.js  
+  inflating: benchmark-octane-master/lib/octane/box2d.js  
+  inflating: benchmark-octane-master/lib/octane/code-load.js  
+  inflating: benchmark-octane-master/lib/octane/crypto.js  
+   creating: benchmark-octane-master/lib/octane/css/
+  inflating: benchmark-octane-master/lib/octane/css/bootstrap-responsive.css  
+  inflating: benchmark-octane-master/lib/octane/css/bootstrap.css  
+  inflating: benchmark-octane-master/lib/octane/css/docs.css  
+  inflating: benchmark-octane-master/lib/octane/deltablue.js  
+  inflating: benchmark-octane-master/lib/octane/earley-boyer.js  
+  inflating: benchmark-octane-master/lib/octane/gbemu-part1.js  
+  inflating: benchmark-octane-master/lib/octane/gbemu-part2.js  
+   creating: benchmark-octane-master/lib/octane/ico/
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-114-precomposed.png  
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-144-precomposed.png  
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-57-precomposed.png  
+ extracting: benchmark-octane-master/lib/octane/ico/apple-touch-icon-72-precomposed.png  
+  inflating: benchmark-octane-master/lib/octane/ico/favicon.ico  
+  inflating: benchmark-octane-master/lib/octane/index.html  
+   creating: benchmark-octane-master/lib/octane/js/
+  inflating: benchmark-octane-master/lib/octane/js/bootstrap-collapse.js  
+  inflating: benchmark-octane-master/lib/octane/js/bootstrap-transition.js  
+  inflating: benchmark-octane-master/lib/octane/js/jquery.js  
+  inflating: benchmark-octane-master/lib/octane/mandreel.js  
+  inflating: benchmark-octane-master/lib/octane/navier-stokes.js  
+  inflating: benchmark-octane-master/lib/octane/pdfjs.js  
+  inflating: benchmark-octane-master/lib/octane/raytrace.js  
+  inflating: benchmark-octane-master/lib/octane/regexp.js  
+  inflating: benchmark-octane-master/lib/octane/richards.js  
+  inflating: benchmark-octane-master/lib/octane/run.js  
+  inflating: benchmark-octane-master/lib/octane/splay.js  
+  inflating: benchmark-octane-master/lib/octane/typescript-compiler.js  
+  inflating: benchmark-octane-master/lib/octane/typescript-input.js  
+  inflating: benchmark-octane-master/lib/octane/typescript.js  
+  inflating: benchmark-octane-master/lib/octane/zlib-data.js  
+  inflating: benchmark-octane-master/lib/octane/zlib.js  
+  inflating: benchmark-octane-master/package.json  
+  inflating: benchmark-octane-master/run.js  
+    hostname     : b0841179e55f
+    node version : v10.15.3
+      V8 version : 6.8.275.32-node.51
+ platform & arch : linux x64
+
+ config : { target_defaults:
+   { cflags: [],
+     default_configuration: [32m'Release'[39m,
+     defines: [],
+     include_dirs: [],
+     libraries: [ [32m'-lz'[39m, [32m'-luv'[39m, [32m'-lnghttp2'[39m, [32m'-lcrypto'[39m, [32m'-lssl'[39m ] },
+  variables:
+   { asan: [33m-0[39m,
+     build_v8_with_gn: [33mfalse[39m,
+     coverage: [33mfalse[39m,
+     debug_nghttp2: [33mfalse[39m,
+     enable_lto: [33mtrue[39m,
+     enable_pgo_generate: [33mfalse[39m,
+     enable_pgo_use: [33mfalse[39m,
+     force_dynamic_crt: [33m-0[39m,
+     host_arch: [32m'x64'[39m,
+     icu_data_in: [32m'../../deps/icu-small/source/data/in/icudt62l.dat'[39m,
+     icu_endianness: [32m'l'[39m,
+     icu_gyp_path: [32m'tools/icu/icu-generic.gyp'[39m,
+     icu_locales: [32m'en,root'[39m,
+     icu_path: [32m'deps/icu-small'[39m,
+     icu_small: [33mtrue[39m,
+     icu_ver_major: [32m'62'[39m,
+     llvm_version: [33m-0[39m,
+     node_byteorder: [32m'little'[39m,
+     node_debug_lib: [33mfalse[39m,
+     node_enable_d8: [33mfalse[39m,
+     node_enable_v8_vtunejit: [33mfalse[39m,
+     node_install_npm: [33mtrue[39m,
+     node_module_version: [33m64[39m,
+     node_no_browser_globals: [33mfalse[39m,
+     node_prefix: [32m'/usr'[39m,
+     node_release_urlbase: [32m''[39m,
+     node_shared: [33mfalse[39m,
+     node_shared_cares: [33mfalse[39m,
+     node_shared_http_parser: [33mfalse[39m,
+     node_shared_libuv: [33mtrue[39m,
+     node_shared_nghttp2: [33mtrue[39m,
+     node_shared_openssl: [33mtrue[39m,
+     node_shared_zlib: [33mtrue[39m,
+     node_tag: [32m''[39m,
+     node_target_type: [32m'executable'[39m,
+     node_use_bundled_v8: [33mtrue[39m,
+     node_use_dtrace: [33mfalse[39m,
+     node_use_etw: [33mfalse[39m,
+     node_use_large_pages: [33mtrue[39m,
+     node_use_openssl: [33mtrue[39m,
+     node_use_pch: [33mfalse[39m,
+     node_use_perfctr: [33mfalse[39m,
+     node_use_v8_platform: [33mtrue[39m,
+     node_with_ltcg: [33mfalse[39m,
+     node_without_node_options: [33mfalse[39m,
+     openssl_fips: [32m''[39m,
+     openssl_no_asm: [33m-0[39m,
+     shlib_suffix: [32m'so.64'[39m,
+     target_arch: [32m'x64'[39m,
+     v8_enable_gdbjit: [33m-0[39m,
+     v8_enable_i18n_support: [33m1[39m,
+     v8_enable_inspector: [33m1[39m,
+     v8_no_strict_aliasing: [33m1[39m,
+     v8_optimized_debug: [33m-0[39m,
+     v8_promise_internal_field_count: [33m1[39m,
+     v8_random_seed: [33m-0[39m,
+     v8_trace_maps: [33m-0[39m,
+     v8_typed_array_max_size_in_heap: [33m-0[39m,
+     v8_use_snapshot: [33mtrue[39m,
+     want_separate_host_toolset: [33m-0[39m } }
+
+Richards            : 26413
+DeltaBlue           : 58852
+Crypto              : 42794
+RayTrace            : 91019
+EarleyBoyer         : 49581
+RegExp              : 7690
+Splay               : 24407
+SplayLatency        : 44903
+NavierStokes        : 40662
+PdfJS               : 27767
+Mandreel            : 32620
+MandreelLatency     : 76695
+Gameboy             : 43814
+CodeLoad            : 24620
+Box2D               : 80325
+zlib                : 74038
+Typescript          : 45882
+----
+Score (version 9): 40479
+ duration  31.775  seconds
+(node:274) [DEP0016] DeprecationWarning: 'GLOBAL' is deprecated, use 'global'
+[node] [INFO] Clr-Node-server:
+[node] 
+php/php.sh
+[php] 
+[php] == php unit test ==
+[php] [INFO] Test docker hub official image first:
+[php] 
+Get:1 http://security-cdn.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Ign:3 http://cdn-fastly.deb.debian.org/debian stretch InRelease
+Get:4 http://cdn-fastly.deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:5 http://cdn-fastly.deb.debian.org/debian buster InRelease [163 kB]
+Get:2 http://security-cdn.debian.org/debian-security buster/updates InRelease [39.1 kB]
+Get:8 http://security-cdn.debian.org/debian-security stretch/updates/main amd64 Packages [492 kB]
+Get:9 http://security-cdn.debian.org/debian-security buster/updates/main amd64 Packages [1132 B]
+Get:6 http://cdn-fastly.deb.debian.org/debian buster-updates InRelease [46.8 kB]
+Get:7 http://cdn-fastly.deb.debian.org/debian stretch Release [118 kB]
+Get:10 http://cdn-fastly.deb.debian.org/debian stretch-updates/main amd64 Packages [27.2 kB]
+Get:11 http://cdn-fastly.deb.debian.org/debian buster/main amd64 Packages [7906 kB]
+Get:12 http://cdn-fastly.deb.debian.org/debian stretch Release.gpg [2434 B]
+Get:13 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 Packages [7082 kB]
+Fetched 16.1 MB in 6min 20s (42.2 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  zip
+The following NEW packages will be installed:
+  unzip wget
+0 upgraded, 2 newly installed, 0 to remove and 1 not upgraded.
+Need to get 970 kB of archives.
+After this operation, 3360 kB of additional disk space will be used.
+Get:1 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 wget amd64 1.18-5+deb9u3 [800 kB]
+Get:2 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 unzip amd64 6.0-21+deb9u1 [170 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 970 kB in 1s (828 kB/s)
+Selecting previously unselected package wget.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 12306 files and directories currently installed.)
+Preparing to unpack .../wget_1.18-5+deb9u3_amd64.deb ...
+Unpacking wget (1.18-5+deb9u3) ...
+Selecting previously unselected package unzip.
+Preparing to unpack .../unzip_6.0-21+deb9u1_amd64.deb ...
+Unpacking unzip (6.0-21+deb9u1) ...
+Setting up unzip (6.0-21+deb9u1) ...
+Setting up wget (1.18-5+deb9u3) ...
+--2019-05-22 14:50:32--  http://phoronix-test-suite.com/benchmark-files/phpbench-081-patched1.zip
+Resolving child-prc.intel.com (child-prc.intel.com)... 10.239.4.160
+Connecting to child-prc.intel.com (child-prc.intel.com)|10.239.4.160|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 33055 (32K) [application/zip]
+Saving to: 'phpbench-081-patched1.zip'
+
+     0K .......... .......... .......... ..                   100% 7.91M=0.004s
+
+2019-05-22 14:50:34 (7.91 MB/s) - 'phpbench-081-patched1.zip' saved [33055/33055]
+
+Archive:  phpbench-081-patched1.zip
+   creating: phpbench-0.8.1-patched1/
+   creating: phpbench-0.8.1-patched1/tests/
+  inflating: phpbench-0.8.1-patched1/tests/test_comment_loop.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_empty_loop.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_scalar_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_global_scalar_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_is_type.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_array_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_global_string_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_string_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_boolean_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_integer_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_constants.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_float_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_string_append.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_preg_match.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_hash_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_variable_variables.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_object_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_get_class.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ereg.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_references.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_increment.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_casting.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_invert.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ord.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_line.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_bitwise.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_if_constant.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_while.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_strict.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_false.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_unstrict.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_array_operators.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ordered_functions.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_do_while.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_strlen.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_do_while_break.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ordered_functions_references.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_isset.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_unordered_functions.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_empty.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_chr_var.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_is_object.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_is_array.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_foreach.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_crc32.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_md5.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_chr_fixed.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_time.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_microtime.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_chr_hardcoded.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_sha1.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_switch.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_mt_rand.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_rand.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_arithmetic.php  
+  inflating: phpbench-0.8.1-patched1/LICENSE  
+  inflating: phpbench-0.8.1-patched1/README  
+  inflating: phpbench-0.8.1-patched1/AUTHORS  
+  inflating: phpbench-0.8.1-patched1/ChangeLog  
+  inflating: phpbench-0.8.1-patched1/phpbench.php  
+
+PHPBench version 0.8.1
+
+-f <file name> : Output a summary as a CSV file.
+-h             : Help.
+-i <number>    : Number of iterations (default=100000).
+
+Scripts are loaded from the following directories: 
+  - /usr/local/lib/phpbench/tests
+  - /usr/local/share/phpbench/tests
+  - /usr/lib/phpbench/tests
+  - /usr/share/phpbench/tests
+  - /opt/phpbench/tests
+  - tests
+  - .
+
+Starting the benchmark with 100000 iterations.
+
+Test [test_ereg] enabled.
+Test [test_rand] enabled.
+Test [test_chr_fixed] enabled.
+Test [test_compare_invert] enabled.
+Test [test_isset] enabled.
+
+Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; TestGetClass has a deprecated constructor in /phpbench-0.8.1-patched1/tests/test_get_class.php on line 3
+Test [test_get_class] enabled.
+Test [test_time] enabled.
+Test [test_ord] enabled.
+Test [test_local_hash_assign] enabled.
+Test [test_strlen] enabled.
+Test [test_constants] enabled.
+Test [test_line] enabled.
+Test [test_is_type] enabled.
+Test [test_local_boolean_assign] enabled.
+Test [test_compare_unstrict] enabled.
+Test [test_microtime] enabled.
+Test [test_unordered_functions] enabled.
+Test [test_while] enabled.
+Test [test_is_object] enabled.
+Test [test_global_string_assign] enabled.
+Test [test_ordered_functions_references] enabled.
+Test [test_increment] enabled.
+Test [test_references] enabled.
+Test [test_do_while] enabled.
+Test [test_comment_loop] enabled.
+Test [test_string_append] enabled.
+Test [test_crc32] enabled.
+Test [test_chr_hardcoded] enabled.
+Test [test_foreach] enabled.
+Test [test_variable_variables] enabled.
+Test [test_md5] enabled.
+Test [test_global_scalar_assign] enabled.
+Test [test_arithmetic] enabled.
+Test [test_empty] enabled.
+Test [test_local_float_assign] enabled.
+Test [test_chr_var] enabled.
+Test [test_mt_rand] enabled.
+Test [test_local_integer_assign] enabled.
+
+Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; TestLocalObjectAssign has a deprecated constructor in /phpbench-0.8.1-patched1/tests/test_local_object_assign.php on line 3
+Test [test_local_object_assign] enabled.
+Test [test_bitwise] enabled.
+Test [test_empty_loop] enabled.
+Test [test_compare_strict] enabled.
+Test [test_local_string_assign] enabled.
+Test [test_preg_match] enabled.
+Test [test_local_scalar_assign] enabled.
+Test [test_is_array] enabled.
+Test [test_compare] enabled.
+Test [test_do_while_break] enabled.
+Test [test_local_array_assign] enabled.
+Test [test_array_operators] enabled.
+Test [test_compare_false] enabled.
+Test [test_sha1] enabled.
+Test [test_if_constant] enabled.
+
+Warning: "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /phpbench-0.8.1-patched1/tests/test_switch.php on line 36
+Test [test_switch] enabled.
+Test [test_ordered_functions] enabled.
+Test [test_casting] enabled.
+
+                   test_arithmetic	   0.0158 seconds.
+              test_array_operators	   0.0461 seconds.
+                      test_bitwise	   0.0083 seconds.
+                      test_casting	   0.2014 seconds.
+                    test_chr_fixed	   0.0687 seconds.
+                test_chr_hardcoded	   0.0695 seconds.
+                      test_chr_var	   0.0947 seconds.
+                 test_comment_loop	   0.0208 seconds.
+                      test_compare	   0.0313 seconds.
+                test_compare_false	   0.0011 seconds.
+               test_compare_invert	   0.0013 seconds.
+               test_compare_strict	   0.0034 seconds.
+             test_compare_unstrict	   0.0089 seconds.
+                    test_constants	   0.0127 seconds.
+                        test_crc32	   0.0076 seconds.
+                     test_do_while	   0.0842 seconds.
+               test_do_while_break	   0.0314 seconds.
+                        test_empty	   0.0010 seconds.
+                   test_empty_loop	   0.0205 seconds.
+                         test_ereg	   0.0194 seconds.
+                      test_foreach	   0.1890 seconds.
+                    test_get_class	   0.0087 seconds.
+         test_global_scalar_assign	   0.0293 seconds.
+         test_global_string_assign	   0.0601 seconds.
+                  test_if_constant	   0.0037 seconds.
+                    test_increment	   0.0155 seconds.
+                     test_is_array	   0.0010 seconds.
+                    test_is_object	   0.0010 seconds.
+                      test_is_type	   0.0050 seconds.
+                        test_isset	   0.0015 seconds.
+                         test_line	   0.0022 seconds.
+           test_local_array_assign	   0.0560 seconds.
+         test_local_boolean_assign	   0.0098 seconds.
+           test_local_float_assign	   0.0098 seconds.
+            test_local_hash_assign	   0.0081 seconds.
+         test_local_integer_assign	   0.0098 seconds.
+          test_local_object_assign	   0.0057 seconds.
+          test_local_scalar_assign	   0.0188 seconds.
+          test_local_string_assign	   0.0535 seconds.
+                          test_md5	   0.0180 seconds.
+                    test_microtime	   0.0587 seconds.
+                      test_mt_rand	   0.0034 seconds.
+                          test_ord	   0.1948 seconds.
+            test_ordered_functions	   0.1225 seconds.
+ test_ordered_functions_references	   0.2020 seconds.
+                   test_preg_match	   0.0160 seconds.
+                         test_rand	   0.0035 seconds.
+                   test_references	   0.0060 seconds.
+                         test_sha1	   0.0244 seconds.
+                test_string_append	   0.0388 seconds.
+                       test_strlen	   0.0014 seconds.
+                       test_switch	   0.0844 seconds.
+                         test_time	   0.0052 seconds.
+          test_unordered_functions	   0.1276 seconds.
+           test_variable_variables	   0.0160 seconds.
+                        test_while	   0.0845 seconds.
+
+System     : Linux 5e4886962d72 5.0.17-760.native #1 SMP Thu May 16 21:38:18 UTC 2019 x86_64
+PHP version: 7.3.5
+PHPBench   : 0.8.1
+Date       : May 22, 2019, 2:50 pm
+Tests      : 56
+Iterations : 100000
+Total time : 2 seconds
+Score      : 445638 (higher is better)
+
+[php] [INFO] default-Php-server:
+[php] 
+[php] [INFO] Test clear docker image:
+[php] 
+Downloading packs...
+.
+Extracting wget pack for version 29170
+
+Extracting openssl pack for version 28150
+
+Extracting unzip pack for version 27670
+
+Starting download of remaining update content. This may take a while...
+........Finishing download of update content...
+
+Installing bundle(s) files...
+................
+Calling post-update helper scripts.
+Successfully installed 2 bundles
+--2019-05-22 14:50:50--  http://phoronix-test-suite.com/benchmark-files/phpbench-081-patched1.zip
+Resolving child-prc.intel.com... 10.239.4.160
+Connecting to child-prc.intel.com|10.239.4.160|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 33055 (32K) [application/zip]
+Saving to: 'phpbench-081-patched1.zip'
+
+     0K .......... .......... .......... ..                   100% 13.0K=2.5s
+
+2019-05-22 14:50:54 (13.0 KB/s) - 'phpbench-081-patched1.zip' saved [33055/33055]
+
+Archive:  phpbench-081-patched1.zip
+   creating: phpbench-0.8.1-patched1/
+   creating: phpbench-0.8.1-patched1/tests/
+  inflating: phpbench-0.8.1-patched1/tests/test_comment_loop.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_empty_loop.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_scalar_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_global_scalar_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_is_type.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_array_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_global_string_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_string_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_boolean_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_integer_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_constants.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_float_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_string_append.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_preg_match.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_hash_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_variable_variables.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_local_object_assign.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_get_class.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ereg.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_references.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_increment.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_casting.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_invert.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ord.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_line.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_bitwise.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_if_constant.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_while.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_strict.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_false.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_compare_unstrict.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_array_operators.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ordered_functions.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_do_while.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_strlen.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_do_while_break.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_ordered_functions_references.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_isset.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_unordered_functions.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_empty.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_chr_var.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_is_object.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_is_array.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_foreach.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_crc32.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_md5.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_chr_fixed.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_time.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_microtime.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_chr_hardcoded.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_sha1.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_switch.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_mt_rand.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_rand.php  
+  inflating: phpbench-0.8.1-patched1/tests/test_arithmetic.php  
+  inflating: phpbench-0.8.1-patched1/LICENSE  
+  inflating: phpbench-0.8.1-patched1/README  
+  inflating: phpbench-0.8.1-patched1/AUTHORS  
+  inflating: phpbench-0.8.1-patched1/ChangeLog  
+  inflating: phpbench-0.8.1-patched1/phpbench.php  
+
+PHPBench version 0.8.1
+
+-f <file name> : Output a summary as a CSV file.
+-h             : Help.
+-i <number>    : Number of iterations (default=100000).
+
+Scripts are loaded from the following directories: 
+  - /usr/local/lib/phpbench/tests
+  - /usr/local/share/phpbench/tests
+  - /usr/lib/phpbench/tests
+  - /usr/share/phpbench/tests
+  - /opt/phpbench/tests
+  - tests
+  - .
+
+Starting the benchmark with 100000 iterations.
+
+Test [test_ereg] enabled.
+Test [test_rand] enabled.
+Test [test_chr_fixed] enabled.
+Test [test_compare_invert] enabled.
+Test [test_isset] enabled.
+
+Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; TestGetClass has a deprecated constructor in /phpbench-0.8.1-patched1/tests/test_get_class.php on line 3
+Test [test_get_class] enabled.
+Test [test_time] enabled.
+Test [test_ord] enabled.
+Test [test_local_hash_assign] enabled.
+Test [test_strlen] enabled.
+Test [test_constants] enabled.
+Test [test_line] enabled.
+Test [test_is_type] enabled.
+Test [test_local_boolean_assign] enabled.
+Test [test_compare_unstrict] enabled.
+Test [test_microtime] enabled.
+Test [test_unordered_functions] enabled.
+Test [test_while] enabled.
+Test [test_is_object] enabled.
+Test [test_global_string_assign] enabled.
+Test [test_ordered_functions_references] enabled.
+Test [test_increment] enabled.
+Test [test_references] enabled.
+Test [test_do_while] enabled.
+Test [test_comment_loop] enabled.
+Test [test_string_append] enabled.
+Test [test_crc32] enabled.
+Test [test_chr_hardcoded] enabled.
+Test [test_foreach] enabled.
+Test [test_variable_variables] enabled.
+Test [test_md5] enabled.
+Test [test_global_scalar_assign] enabled.
+Test [test_arithmetic] enabled.
+Test [test_empty] enabled.
+Test [test_local_float_assign] enabled.
+Test [test_chr_var] enabled.
+Test [test_mt_rand] enabled.
+Test [test_local_integer_assign] enabled.
+
+Deprecated: Methods with the same name as their class will not be constructors in a future version of PHP; TestLocalObjectAssign has a deprecated constructor in /phpbench-0.8.1-patched1/tests/test_local_object_assign.php on line 3
+Test [test_local_object_assign] enabled.
+Test [test_bitwise] enabled.
+Test [test_empty_loop] enabled.
+Test [test_compare_strict] enabled.
+Test [test_local_string_assign] enabled.
+Test [test_preg_match] enabled.
+Test [test_local_scalar_assign] enabled.
+Test [test_is_array] enabled.
+Test [test_compare] enabled.
+Test [test_do_while_break] enabled.
+Test [test_local_array_assign] enabled.
+Test [test_array_operators] enabled.
+Test [test_compare_false] enabled.
+Test [test_sha1] enabled.
+Test [test_if_constant] enabled.
+
+Warning: "continue" targeting switch is equivalent to "break". Did you mean to use "continue 2"? in /phpbench-0.8.1-patched1/tests/test_switch.php on line 36
+Test [test_switch] enabled.
+Test [test_ordered_functions] enabled.
+Test [test_casting] enabled.
+
+                   test_arithmetic	   0.0036 seconds.
+              test_array_operators	   0.0015 seconds.
+                      test_bitwise	   0.0015 seconds.
+                      test_casting	   0.1725 seconds.
+                    test_chr_fixed	   0.1074 seconds.
+                test_chr_hardcoded	   0.1081 seconds.
+                      test_chr_var	   0.1767 seconds.
+                 test_comment_loop	   0.0409 seconds.
+                      test_compare	   0.0018 seconds.
+                test_compare_false	   0.0015 seconds.
+               test_compare_invert	   0.0015 seconds.
+               test_compare_strict	   0.0015 seconds.
+             test_compare_unstrict	   0.0015 seconds.
+                    test_constants	   0.0166 seconds.
+                        test_crc32	   0.0115 seconds.
+                     test_do_while	   0.1125 seconds.
+               test_do_while_break	   0.0136 seconds.
+                        test_empty	   0.0015 seconds.
+                   test_empty_loop	   0.0405 seconds.
+                         test_ereg	   0.0198 seconds.
+                      test_foreach	   0.2953 seconds.
+                    test_get_class	   0.0104 seconds.
+         test_global_scalar_assign	   0.0281 seconds.
+         test_global_string_assign	   0.0628 seconds.
+                  test_if_constant	   0.0015 seconds.
+                    test_increment	   0.0106 seconds.
+                     test_is_array	   0.0015 seconds.
+                    test_is_object	   0.0015 seconds.
+                      test_is_type	   0.0015 seconds.
+                        test_isset	   0.0015 seconds.
+                         test_line	   0.0015 seconds.
+           test_local_array_assign	   0.0053 seconds.
+         test_local_boolean_assign	   0.0018 seconds.
+           test_local_float_assign	   0.0015 seconds.
+            test_local_hash_assign	   0.0138 seconds.
+         test_local_integer_assign	   0.0015 seconds.
+          test_local_object_assign	   0.0093 seconds.
+          test_local_scalar_assign	   0.0015 seconds.
+          test_local_string_assign	   0.0015 seconds.
+                          test_md5	   0.0216 seconds.
+                    test_microtime	   0.0558 seconds.
+                      test_mt_rand	   0.0067 seconds.
+                          test_ord	   0.3217 seconds.
+            test_ordered_functions	   0.1827 seconds.
+ test_ordered_functions_references	   0.2585 seconds.
+                   test_preg_match	   0.0169 seconds.
+                         test_rand	   0.0068 seconds.
+                   test_references	   0.0069 seconds.
+                         test_sha1	   0.0258 seconds.
+                test_string_append	   0.0015 seconds.
+                       test_strlen	   0.0016 seconds.
+                       test_switch	   0.1083 seconds.
+                         test_time	   0.0075 seconds.
+          test_unordered_functions	   0.1825 seconds.
+           test_variable_variables	   0.0199 seconds.
+                        test_while	   0.1128 seconds.
+
+System     : Linux df6f0fa0f686 5.0.17-760.native #1 SMP Thu May 16 21:38:18 UTC 2019 x86_64
+PHP version: 7.3.5
+PHPBench   : 0.8.1
+Date       : May 22, 2019, 2:50 pm
+Tests      : 56
+Iterations : 100000
+Total time : 3 seconds
+Score      : 380821 (higher is better)
+
+[php] [INFO] Clr-Php-server:
+[php] 
+python/python.sh
+[python] 
+[python] == python unit test ==
+[python] [INFO] Test docker hub official image first:
+[python] 
+Get:1 http://security-cdn.debian.org/debian-security stretch/updates InRelease [94.3 kB]
+Get:3 http://security-cdn.debian.org/debian-security stretch/updates/main amd64 Packages [492 kB]
+Ign:2 http://cdn-fastly.deb.debian.org/debian stretch InRelease
+Get:4 http://cdn-fastly.deb.debian.org/debian stretch-updates InRelease [91.0 kB]
+Get:5 http://cdn-fastly.deb.debian.org/debian stretch-updates/main amd64 Packages [27.2 kB]
+Get:6 http://cdn-fastly.deb.debian.org/debian stretch Release [118 kB]
+Get:7 http://cdn-fastly.deb.debian.org/debian stretch Release.gpg [2434 B]
+Get:8 http://cdn-fastly.deb.debian.org/debian stretch/main amd64 Packages [7082 kB]
+Fetched 7907 kB in 21s (363 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+wget is already the newest version (1.18-5+deb9u3).
+0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.
+--2019-05-22 14:51:20--  http://www.phoronix-test-suite.com/benchmark-files/pybench-2018-02-16.tar.gz
+Resolving child-prc.intel.com (child-prc.intel.com)... 10.239.4.101
+Connecting to child-prc.intel.com (child-prc.intel.com)|10.239.4.101|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 102590 (100K) [application/x-gzip]
+Saving to: ‘pybench-2018-02-16.tar.gz’
+
+     0K .......... .......... .......... .......... .......... 49%  108K 0s
+    50K .......... .......... .......... .......... .......... 99% 16.2K 0s
+   100K                                                       100%  354G=3.6s
+
+2019-05-22 14:51:24 (28.2 KB/s) - ‘pybench-2018-02-16.tar.gz’ saved [102590/102590]
+
+pybench-2018-02-16/
+pybench-2018-02-16/Numbers.py
+pybench-2018-02-16/pybench.py
+pybench-2018-02-16/Constructs.pyc
+pybench-2018-02-16/Unicode.py
+pybench-2018-02-16/Lookups.pyc
+pybench-2018-02-16/Lists.py
+pybench-2018-02-16/Calls.pyc
+pybench-2018-02-16/Exceptions.pyc
+pybench-2018-02-16/Dict.pyc
+pybench-2018-02-16/Arithmetic.py
+pybench-2018-02-16/Constructs.py
+pybench-2018-02-16/pybench.pyc
+pybench-2018-02-16/Exceptions.py
+pybench-2018-02-16/Tuples.py
+pybench-2018-02-16/With.py
+pybench-2018-02-16/__pycache__/
+pybench-2018-02-16/__pycache__/Tuples.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Exceptions.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Numbers.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Dict.cpython-36.pyc
+pybench-2018-02-16/__pycache__/CommandLine.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Unicode.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Lookups.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Constructs.cpython-36.pyc
+pybench-2018-02-16/__pycache__/pybench.cpython-36.pyc
+pybench-2018-02-16/__pycache__/With.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Lists.cpython-36.pyc
+pybench-2018-02-16/__pycache__/NewInstances.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Imports.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Calls.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Instances.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Arithmetic.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Setup.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Strings.cpython-36.pyc
+pybench-2018-02-16/Imports.pyc
+pybench-2018-02-16/CommandLine.py
+pybench-2018-02-16/Setup.pyc
+pybench-2018-02-16/Strings.pyc
+pybench-2018-02-16/LICENSE
+pybench-2018-02-16/Lists.pyc
+pybench-2018-02-16/Strings.py
+pybench-2018-02-16/NewInstances.pyc
+pybench-2018-02-16/Instances.py
+pybench-2018-02-16/Setup.py
+pybench-2018-02-16/Unicode.pyc
+pybench-2018-02-16/Imports.py
+pybench-2018-02-16/README
+pybench-2018-02-16/package/
+pybench-2018-02-16/package/__init__.py
+pybench-2018-02-16/package/__init__.pyc
+pybench-2018-02-16/package/__pycache__/
+pybench-2018-02-16/package/__pycache__/__init__.cpython-36.pyc
+pybench-2018-02-16/package/__pycache__/submodule.cpython-36.pyc
+pybench-2018-02-16/package/.svn/
+pybench-2018-02-16/package/.svn/tmp/
+pybench-2018-02-16/package/.svn/tmp/props/
+pybench-2018-02-16/package/.svn/tmp/prop-base/
+pybench-2018-02-16/package/.svn/tmp/text-base/
+pybench-2018-02-16/package/.svn/all-wcprops
+pybench-2018-02-16/package/.svn/format
+pybench-2018-02-16/package/.svn/props/
+pybench-2018-02-16/package/.svn/entries
+pybench-2018-02-16/package/.svn/prop-base/
+pybench-2018-02-16/package/.svn/prop-base/submodule.py.svn-base
+pybench-2018-02-16/package/.svn/prop-base/__init__.py.svn-base
+pybench-2018-02-16/package/.svn/text-base/
+pybench-2018-02-16/package/.svn/text-base/submodule.py.svn-base
+pybench-2018-02-16/package/.svn/text-base/__init__.py.svn-base
+pybench-2018-02-16/package/.svn/dir-prop-base
+pybench-2018-02-16/package/submodule.pyc
+pybench-2018-02-16/package/submodule.py
+pybench-2018-02-16/With.pyc
+pybench-2018-02-16/Tuples.pyc
+pybench-2018-02-16/NewInstances.py
+pybench-2018-02-16/Numbers.pyc
+pybench-2018-02-16/CommandLine.pyc
+pybench-2018-02-16/Instances.pyc
+pybench-2018-02-16/clockres.py
+pybench-2018-02-16/.CommandLine.py.swp
+pybench-2018-02-16/systimes.py
+pybench-2018-02-16/Calls.py
+pybench-2018-02-16/Dict.py
+pybench-2018-02-16/Lookups.py
+pybench-2018-02-16/Arithmetic.pyc
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using CPython 3.7.3(default,May82019,05:28:42)[GCC6.3.020170516]
+* disabled garbage collection
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Calibrating tests. Please wait... done.
+
+Running 10 round(s) of the suite at warp factor 10:
+
+* Round 1 done in 2.141 seconds.
+* Round 2 done in 2.139 seconds.
+* Round 3 done in 2.143 seconds.
+* Round 4 done in 2.139 seconds.
+* Round 5 done in 2.140 seconds.
+* Round 6 done in 2.139 seconds.
+* Round 7 done in 2.141 seconds.
+* Round 8 done in 2.137 seconds.
+* Round 9 done in 2.139 seconds.
+* Round 10 done in 2.142 seconds.
+
+-------------------------------------------------------------------------------
+Benchmark: 2019-05-22 14:51:24
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:    Linux-5.0.17-760.native-x86_64-with-debian-9.9
+       Processor:      
+    
+    Python:
+       Implementation: CPython
+       Executable:     /usr/local/bin/python3
+       Version:        3.7.3
+       Compiler:       GCC 6.3.0 20170516
+       Bits:           64bit
+       Build:          May  8 2019 05:28:42 (#default)
+       Unicode:        UCS4
+
+
+Test                             minimum  average  operation  overhead
+-------------------------------------------------------------------------------
+          BuiltinFunctionCalls:     68ms     69ms    0.14us    0.100ms
+           BuiltinMethodLookup:     35ms     35ms    0.03us    0.117ms
+                 CompareFloats:     42ms     42ms    0.04us    0.134ms
+         CompareFloatsIntegers:     40ms     40ms    0.04us    0.100ms
+               CompareIntegers:     57ms     57ms    0.03us    0.201ms
+        CompareInternedStrings:     47ms     47ms    0.03us    0.507ms
+                  CompareLongs:     33ms     34ms    0.03us    0.117ms
+                CompareStrings:     37ms     37ms    0.04us    0.340ms
+    ComplexPythonFunctionCalls:     47ms     47ms    0.24us    0.168ms
+                 ConcatStrings:     22ms     23ms    0.05us    0.194ms
+               CreateInstances:     42ms     42ms    0.38us    0.152ms
+            CreateNewInstances:     32ms     32ms    0.38us    0.118ms
+       CreateStringsWithConcat:     50ms     50ms    0.05us    0.336ms
+                  DictCreation:     33ms     34ms    0.08us    0.134ms
+             DictWithFloatKeys:     37ms     38ms    0.04us    0.252ms
+           DictWithIntegerKeys:     39ms     40ms    0.03us    0.336ms
+            DictWithStringKeys:     37ms     38ms    0.03us    0.329ms
+                      ForLoops:     28ms     29ms    1.14us    0.028ms
+                    IfThenElse:     49ms     49ms    0.04us    0.246ms
+                   ListSlicing:     61ms     61ms    4.37us    0.030ms
+                NestedForLoops:     36ms     36ms    0.02us    0.012ms
+      NestedListComprehensions:     51ms     51ms    4.26us    0.034ms
+          NormalClassAttribute:     60ms     60ms    0.05us    0.170ms
+       NormalInstanceAttribute:     39ms     40ms    0.03us    0.171ms
+           PythonFunctionCalls:     46ms     46ms    0.14us    0.100ms
+             PythonMethodCalls:     50ms     50ms    0.22us    0.057ms
+                     Recursion:     68ms     68ms    1.36us    0.168ms
+                  SecondImport:     13ms     13ms    0.13us    0.066ms
+           SecondPackageImport:     13ms     13ms    0.13us    0.066ms
+         SecondSubmoduleImport:     28ms     28ms    0.28us    0.065ms
+       SimpleComplexArithmetic:     31ms     32ms    0.04us    0.131ms
+        SimpleDictManipulation:     86ms     86ms    0.07us    0.164ms
+         SimpleFloatArithmetic:     36ms     36ms    0.03us    0.197ms
+      SimpleIntFloatArithmetic:     39ms     39ms    0.03us    0.197ms
+       SimpleIntegerArithmetic:     39ms     39ms    0.03us    0.197ms
+      SimpleListComprehensions:     42ms     43ms    3.56us    0.033ms
+        SimpleListManipulation:     38ms     39ms    0.03us    0.213ms
+          SimpleLongArithmetic:     25ms     25ms    0.04us    0.098ms
+                    SmallLists:     47ms     47ms    0.07us    0.131ms
+                   SmallTuples:     59ms     60ms    0.11us    0.147ms
+         SpecialClassAttribute:     61ms     62ms    0.05us    0.171ms
+      SpecialInstanceAttribute:     42ms     42ms    0.04us    0.171ms
+                StringMappings:     55ms     56ms    0.22us    0.141ms
+              StringPredicates:     39ms     39ms    0.06us    0.898ms
+                 StringSlicing:     45ms     45ms    0.08us    0.276ms
+                     TryExcept:     13ms     13ms    0.01us    0.246ms
+                    TryFinally:     31ms     31ms    0.19us    0.131ms
+                TryRaiseExcept:     12ms     13ms    0.20us    0.131ms
+                  TupleSlicing:     67ms     67ms    0.26us    0.020ms
+                   WithFinally:     39ms     40ms    0.25us    0.144ms
+               WithRaiseExcept:     36ms     36ms    0.45us    0.164ms
+-------------------------------------------------------------------------------
+Totals:                           2121ms   2140ms
+
+pybench.py:864: DeprecationWarning: sys.getcheckinterval() and sys.setcheckinterval() are deprecated.  Use sys.setswitchinterval() instead.
+  sys.setcheckinterval(value)
+[python] [INFO] default-Python-server:
+[python] 
+[python] [INFO] Test clear docker image:
+[python] 
+Downloading packs...
+
+Extracting wget pack for version 29170
+.
+Extracting openssl pack for version 28150
+
+Extracting lib-openssl pack for version 28150
+
+Starting download of remaining update content. This may take a while...
+.......Finishing download of update content...
+
+Installing bundle(s) files...
+...............
+Calling post-update helper scripts.
+Successfully installed 1 bundle
+--2019-05-22 14:52:02--  http://www.phoronix-test-suite.com/benchmark-files/pybench-2018-02-16.tar.gz
+Resolving child-prc.intel.com... 10.239.4.100
+Connecting to child-prc.intel.com|10.239.4.100|:913... connected.
+Proxy request sent, awaiting response... 200 OK
+Length: 102590 (100K) [application/x-gzip]
+Saving to: 'pybench-2018-02-16.tar.gz'
+
+     0K .......... .......... .......... .......... .......... 49% 99.6K 1s
+    50K .......... .......... .......... .......... .......... 99% 69.2K 0s
+   100K                                                       100%  354G=1.2s
+
+2019-05-22 14:52:04 (81.8 KB/s) - 'pybench-2018-02-16.tar.gz' saved [102590/102590]
+
+pybench-2018-02-16/
+pybench-2018-02-16/Numbers.py
+pybench-2018-02-16/pybench.py
+pybench-2018-02-16/Constructs.pyc
+pybench-2018-02-16/Unicode.py
+pybench-2018-02-16/Lookups.pyc
+pybench-2018-02-16/Lists.py
+pybench-2018-02-16/Calls.pyc
+pybench-2018-02-16/Exceptions.pyc
+pybench-2018-02-16/Dict.pyc
+pybench-2018-02-16/Arithmetic.py
+pybench-2018-02-16/Constructs.py
+pybench-2018-02-16/pybench.pyc
+pybench-2018-02-16/Exceptions.py
+pybench-2018-02-16/Tuples.py
+pybench-2018-02-16/With.py
+pybench-2018-02-16/__pycache__/
+pybench-2018-02-16/__pycache__/Tuples.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Exceptions.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Numbers.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Dict.cpython-36.pyc
+pybench-2018-02-16/__pycache__/CommandLine.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Unicode.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Lookups.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Constructs.cpython-36.pyc
+pybench-2018-02-16/__pycache__/pybench.cpython-36.pyc
+pybench-2018-02-16/__pycache__/With.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Lists.cpython-36.pyc
+pybench-2018-02-16/__pycache__/NewInstances.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Imports.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Calls.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Instances.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Arithmetic.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Setup.cpython-36.pyc
+pybench-2018-02-16/__pycache__/Strings.cpython-36.pyc
+pybench-2018-02-16/Imports.pyc
+pybench-2018-02-16/CommandLine.py
+pybench-2018-02-16/Setup.pyc
+pybench-2018-02-16/Strings.pyc
+pybench-2018-02-16/LICENSE
+pybench-2018-02-16/Lists.pyc
+pybench-2018-02-16/Strings.py
+pybench-2018-02-16/NewInstances.pyc
+pybench-2018-02-16/Instances.py
+pybench-2018-02-16/Setup.py
+pybench-2018-02-16/Unicode.pyc
+pybench-2018-02-16/Imports.py
+pybench-2018-02-16/README
+pybench-2018-02-16/package/
+pybench-2018-02-16/package/__init__.py
+pybench-2018-02-16/package/__init__.pyc
+pybench-2018-02-16/package/__pycache__/
+pybench-2018-02-16/package/__pycache__/__init__.cpython-36.pyc
+pybench-2018-02-16/package/__pycache__/submodule.cpython-36.pyc
+pybench-2018-02-16/package/.svn/
+pybench-2018-02-16/package/.svn/tmp/
+pybench-2018-02-16/package/.svn/tmp/props/
+pybench-2018-02-16/package/.svn/tmp/prop-base/
+pybench-2018-02-16/package/.svn/tmp/text-base/
+pybench-2018-02-16/package/.svn/all-wcprops
+pybench-2018-02-16/package/.svn/format
+pybench-2018-02-16/package/.svn/props/
+pybench-2018-02-16/package/.svn/entries
+pybench-2018-02-16/package/.svn/prop-base/
+pybench-2018-02-16/package/.svn/prop-base/submodule.py.svn-base
+pybench-2018-02-16/package/.svn/prop-base/__init__.py.svn-base
+pybench-2018-02-16/package/.svn/text-base/
+pybench-2018-02-16/package/.svn/text-base/submodule.py.svn-base
+pybench-2018-02-16/package/.svn/text-base/__init__.py.svn-base
+pybench-2018-02-16/package/.svn/dir-prop-base
+pybench-2018-02-16/package/submodule.pyc
+pybench-2018-02-16/package/submodule.py
+pybench-2018-02-16/With.pyc
+pybench-2018-02-16/Tuples.pyc
+pybench-2018-02-16/NewInstances.py
+pybench-2018-02-16/Numbers.pyc
+pybench-2018-02-16/CommandLine.pyc
+pybench-2018-02-16/Instances.pyc
+pybench-2018-02-16/clockres.py
+pybench-2018-02-16/.CommandLine.py.swp
+pybench-2018-02-16/systimes.py
+pybench-2018-02-16/Calls.py
+pybench-2018-02-16/Dict.py
+pybench-2018-02-16/Lookups.py
+pybench-2018-02-16/Arithmetic.pyc
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using CPython 3.7.3(default,Apr212019,04:41:32)[GCC9.0.120190420(experimental)gcc-8-branch@270465]
+* disabled garbage collection
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Calibrating tests. Please wait... pybench.py:864: DeprecationWarning: sys.getcheckinterval() and sys.setcheckinterval() are deprecated.  Use sys.setswitchinterval() instead.
+  sys.setcheckinterval(value)
+done.
+
+Running 10 round(s) of the suite at warp factor 10:
+
+* Round 1 done in 1.829 seconds.
+* Round 2 done in 1.833 seconds.
+* Round 3 done in 1.837 seconds.
+* Round 4 done in 1.830 seconds.
+* Round 5 done in 1.827 seconds.
+* Round 6 done in 1.824 seconds.
+* Round 7 done in 1.830 seconds.
+* Round 8 done in 1.822 seconds.
+* Round 9 done in 1.829 seconds.
+* Round 10 done in 1.824 seconds.
+
+-------------------------------------------------------------------------------
+Benchmark: 2019-05-22 14:52:04
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   10
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:    Linux-5.0.17-760.native-x86_64-with-glibc2.29
+       Processor:      
+    
+    Python:
+       Implementation: CPython
+       Executable:     /usr/sbin/python3
+       Version:        3.7.3
+       Compiler:       GCC 9.0.1 20190420 (experimental) gcc-8-branch@270465
+       Bits:           64bit
+       Build:          Apr 21 2019 04:41:32 (#default)
+       Unicode:        UCS4
+
+
+Test                             minimum  average  operation  overhead
+-------------------------------------------------------------------------------
+          BuiltinFunctionCalls:     59ms     59ms    0.12us    0.076ms
+           BuiltinMethodLookup:     29ms     29ms    0.03us    0.080ms
+                 CompareFloats:     37ms     37ms    0.03us    0.092ms
+         CompareFloatsIntegers:     34ms     34ms    0.04us    0.069ms
+               CompareIntegers:     44ms     44ms    0.02us    0.138ms
+        CompareInternedStrings:     36ms     37ms    0.02us    0.340ms
+                  CompareLongs:     25ms     26ms    0.02us    0.079ms
+                CompareStrings:     36ms     36ms    0.04us    0.229ms
+    ComplexPythonFunctionCalls:     38ms     39ms    0.19us    0.135ms
+                 ConcatStrings:     24ms     27ms    0.05us    0.139ms
+               CreateInstances:     34ms     35ms    0.31us    0.104ms
+            CreateNewInstances:     26ms     26ms    0.31us    0.081ms
+       CreateStringsWithConcat:     38ms     39ms    0.04us    0.225ms
+                  DictCreation:     30ms     30ms    0.08us    0.090ms
+             DictWithFloatKeys:     40ms     41ms    0.05us    0.169ms
+           DictWithIntegerKeys:     36ms     36ms    0.03us    0.225ms
+            DictWithStringKeys:     35ms     36ms    0.03us    0.225ms
+                      ForLoops:     26ms     26ms    1.05us    0.027ms
+                    IfThenElse:     39ms     39ms    0.03us    0.169ms
+                   ListSlicing:     60ms     60ms    4.27us    0.026ms
+                NestedForLoops:     32ms     32ms    0.02us    0.016ms
+      NestedListComprehensions:     45ms     45ms    3.78us    0.023ms
+          NormalClassAttribute:     51ms     52ms    0.04us    0.117ms
+       NormalInstanceAttribute:     33ms     33ms    0.03us    0.117ms
+           PythonFunctionCalls:     39ms     39ms    0.12us    0.068ms
+             PythonMethodCalls:     40ms     41ms    0.18us    0.039ms
+                     Recursion:     57ms     58ms    1.15us    0.112ms
+                  SecondImport:      7ms      7ms    0.07us    0.045ms
+           SecondPackageImport:      8ms      8ms    0.08us    0.045ms
+         SecondSubmoduleImport:     18ms     18ms    0.18us    0.045ms
+       SimpleComplexArithmetic:     27ms     28ms    0.03us    0.090ms
+        SimpleDictManipulation:     74ms     75ms    0.06us    0.112ms
+         SimpleFloatArithmetic:     34ms     34ms    0.03us    0.135ms
+      SimpleIntFloatArithmetic:     36ms     36ms    0.03us    0.135ms
+       SimpleIntegerArithmetic:     36ms     36ms    0.03us    0.135ms
+      SimpleListComprehensions:     39ms     39ms    3.29us    0.024ms
+        SimpleListManipulation:     34ms     35ms    0.03us    0.150ms
+          SimpleLongArithmetic:     21ms     21ms    0.03us    0.069ms
+                    SmallLists:     41ms     42ms    0.06us    0.092ms
+                   SmallTuples:     51ms     51ms    0.10us    0.103ms
+         SpecialClassAttribute:     51ms     51ms    0.04us    0.117ms
+      SpecialInstanceAttribute:     33ms     34ms    0.03us    0.117ms
+                StringMappings:     35ms     35ms    0.14us    0.121ms
+              StringPredicates:     31ms     32ms    0.05us    0.729ms
+                 StringSlicing:     36ms     36ms    0.06us    0.202ms
+                     TryExcept:     11ms     11ms    0.01us    0.169ms
+                    TryFinally:     26ms     26ms    0.16us    0.090ms
+                TryRaiseExcept:     10ms     10ms    0.16us    0.090ms
+                  TupleSlicing:     62ms     62ms    0.24us    0.017ms
+                   WithFinally:     33ms     33ms    0.21us    0.090ms
+               WithRaiseExcept:     30ms     30ms    0.38us    0.112ms
+-------------------------------------------------------------------------------
+Totals:                           1809ms   1829ms
+
+[python] [INFO] Clr-Python-server:
+[python] 
+redis/redis.sh
+[redis] 
+[redis] == redis unit test ==
+89772257005d        redis-network       bridge              local
+[redis] [INFO] Test docker hub official image first:
+[redis] 
+cb97190357c762d49414ef55c9c76f74c48716f5433a1d55986818b800e7c0a2
+PING_INLINE: -nanPING_INLINE: 114908.00PING_INLINE: 114810.00PING_INLINE: 114717.34====== PING_INLINE ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114547.53 requests per second
+
+PING_BULK: 111592.92PING_BULK: 111666.66PING_BULK: 111448.62PING_BULK: 111530.71====== PING_BULK ======
+  100000 requests completed in 0.90 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+111607.14 requests per second
+
+SET: 114995.08SET: 114741.72SET: 114695.59====== SET ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114810.56 requests per second
+
+GET: 114253.73GET: 114933.75GET: 114798.95GET: 114833.54====== GET ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114810.56 requests per second
+
+INCR: 116252.75INCR: 115988.42INCR: 116029.33====== INCR ======
+  100000 requests completed in 0.86 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+115874.86 requests per second
+
+LPUSH: 116872.73LPUSH: 117340.98LPUSH: 116612.61LPUSH: 115982.61====== LPUSH ======
+  100000 requests completed in 0.86 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+115874.86 requests per second
+
+RPUSH: 115865.16RPUSH: 115259.34RPUSH: 115112.10====== RPUSH ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+115207.38 requests per second
+
+LPOP: 115177.77LPOP: 115108.48LPOP: 115051.38LPOP: 114997.48====== LPOP ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+115074.80 requests per second
+
+RPOP: 114950.62RPOP: 114793.69RPOP: 114507.55====== RPOP ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114547.53 requests per second
+
+SADD: 111520.00SADD: 114509.09SADD: 114340.96SADD: 114472.26====== SADD ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114547.53 requests per second
+
+HSET: 118420.29HSET: 118649.48HSET: 118424.77====== HSET ======
+  100000 requests completed in 0.84 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+118483.41 requests per second
+
+SPOP: 111733.34SPOP: 115103.57SPOP: 115105.66SPOP: 114800.01====== SPOP ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114678.90 requests per second
+
+LPUSH (needed to benchmark LRANGE): 116534.73LPUSH (needed to benchmark LRANGE): 117520.30LPUSH (needed to benchmark LRANGE): 117546.59====== LPUSH (needed to benchmark LRANGE) ======
+  100000 requests completed in 0.85 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+117508.81 requests per second
+
+LRANGE_100 (first 100 elements): 56206.90LRANGE_100 (first 100 elements): 56827.95LRANGE_100 (first 100 elements): 57334.59LRANGE_100 (first 100 elements): 57296.54LRANGE_100 (first 100 elements): 57181.73LRANGE_100 (first 100 elements): 57277.56LRANGE_100 (first 100 elements): 57344.67====== LRANGE_100 (first 100 elements) ======
+  100000 requests completed in 1.74 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 1 milliseconds
+57438.25 requests per second
+
+LRANGE_300 (first 300 elements): 24375.00LRANGE_300 (first 300 elements): 24215.33LRANGE_300 (first 300 elements): 23971.38LRANGE_300 (first 300 elements): 23855.30LRANGE_300 (first 300 elements): 23806.64LRANGE_300 (first 300 elements): 23779.43LRANGE_300 (first 300 elements): 23755.90LRANGE_300 (first 300 elements): 23724.91LRANGE_300 (first 300 elements): 23710.97LRANGE_300 (first 300 elements): 23735.27LRANGE_300 (first 300 elements): 23753.17LRANGE_300 (first 300 elements): 23777.94LRANGE_300 (first 300 elements): 23794.97LRANGE_300 (first 300 elements): 23809.41LRANGE_300 (first 300 elements): 23827.47LRANGE_300 (first 300 elements): 23844.20LRANGE_300 (first 300 elements): 23848.66====== LRANGE_300 (first 300 elements) ======
+  100000 requests completed in 4.19 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+20.46% <= 1 milliseconds
+99.99% <= 2 milliseconds
+100.00% <= 2 milliseconds
+23854.96 requests per second
+
+LRANGE_500 (first 450 elements): 17477.61LRANGE_500 (first 450 elements): 17528.30LRANGE_500 (first 450 elements): 17544.01LRANGE_500 (first 450 elements): 17523.23LRANGE_500 (first 450 elements): 17517.31LRANGE_500 (first 450 elements): 17528.43LRANGE_500 (first 450 elements): 17551.31LRANGE_500 (first 450 elements): 17582.74LRANGE_500 (first 450 elements): 17575.16LRANGE_500 (first 450 elements): 17572.41LRANGE_500 (first 450 elements): 17579.54LRANGE_500 (first 450 elements): 17591.63LRANGE_500 (first 450 elements): 17593.94LRANGE_500 (first 450 elements): 17590.61LRANGE_500 (first 450 elements): 17585.67LRANGE_500 (first 450 elements): 17587.65LRANGE_500 (first 450 elements): 17589.64LRANGE_500 (first 450 elements): 17586.40LRANGE_500 (first 450 elements): 17591.95LRANGE_500 (first 450 elements): 17598.38LRANGE_500 (first 450 elements): 17603.79LRANGE_500 (first 450 elements): 17606.99LRANGE_500 (first 450 elements): 17611.23====== LRANGE_500 (first 450 elements) ======
+  100000 requests completed in 5.68 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+0.01% <= 1 milliseconds
+99.96% <= 2 milliseconds
+99.99% <= 3 milliseconds
+100.00% <= 3 milliseconds
+17611.84 requests per second
+
+LRANGE_600 (first 600 elements): 13917.29LRANGE_600 (first 600 elements): 14049.61LRANGE_600 (first 600 elements): 14056.78LRANGE_600 (first 600 elements): 14055.43LRANGE_600 (first 600 elements): 14086.34LRANGE_600 (first 600 elements): 14088.74LRANGE_600 (first 600 elements): 14085.57LRANGE_600 (first 600 elements): 14079.49LRANGE_600 (first 600 elements): 14074.37LRANGE_600 (first 600 elements): 14076.21LRANGE_600 (first 600 elements): 14077.33LRANGE_600 (first 600 elements): 14075.48LRANGE_600 (first 600 elements): 14081.90LRANGE_600 (first 600 elements): 14083.21LRANGE_600 (first 600 elements): 14077.47LRANGE_600 (first 600 elements): 14072.99LRANGE_600 (first 600 elements): 14068.57LRANGE_600 (first 600 elements): 14064.88LRANGE_600 (first 600 elements): 14066.75LRANGE_600 (first 600 elements): 14063.33LRANGE_600 (first 600 elements): 14058.50LRANGE_600 (first 600 elements): 14058.20LRANGE_600 (first 600 elements): 14058.46LRANGE_600 (first 600 elements): 14054.45LRANGE_600 (first 600 elements): 14048.49LRANGE_600 (first 600 elements): 14049.09LRANGE_600 (first 600 elements): 14045.74LRANGE_600 (first 600 elements): 14042.63====== LRANGE_600 (first 600 elements) ======
+  100000 requests completed in 7.12 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+0.01% <= 1 milliseconds
+99.83% <= 2 milliseconds
+99.96% <= 3 milliseconds
+99.98% <= 4 milliseconds
+100.00% <= 5 milliseconds
+14039.03 requests per second
+
+MSET (10 keys): 106374.99MSET (10 keys): 119186.05MSET (10 keys): 119590.55MSET (10 keys): 120081.79====== MSET (10 keys) ======
+  100000 requests completed in 0.83 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+120048.02 requests per second
+
+
+some-redis
+[redis] [INFO] Test clear docker image:
+[redis] 
+0aa5493d7318bab9accbfc9df93030fc19006566184981295fb3c7b7a29503ff
+PING_INLINE: -nanPING_INLINE: 112332.00PING_INLINE: 113020.00PING_INLINE: 113054.66====== PING_INLINE ======
+  100000 requests completed in 0.89 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+112866.82 requests per second
+
+PING_BULK: 110479.59PING_BULK: 111270.12PING_BULK: 110433.11PING_BULK: 110146.23====== PING_BULK ======
+  100000 requests completed in 0.91 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+110132.16 requests per second
+
+SET: 113574.72SET: 113566.04SET: 113529.67====== SET ======
+  100000 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.97% <= 1 milliseconds
+100.00% <= 1 milliseconds
+113250.28 requests per second
+
+GET: 111720.00GET: 110898.18GET: 111236.20GET: 111411.62====== GET ======
+  100000 requests completed in 0.90 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+111482.72 requests per second
+
+INCR: 113571.42INCR: 113881.22INCR: 113383.99INCR: 113203.02====== INCR ======
+  100000 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+113250.28 requests per second
+
+LPUSH: 113301.89LPUSH: 114283.55LPUSH: 114405.90====== LPUSH ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114416.48 requests per second
+
+RPUSH: 113319.45RPUSH: 113527.95RPUSH: 113246.50RPUSH: 113164.23====== RPUSH ======
+  100000 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+113122.17 requests per second
+
+LPOP: 112832.38LPOP: 113293.14LPOP: 113350.67====== LPOP ======
+  100000 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+113378.68 requests per second
+
+RPOP: 107800.00RPOP: 112752.73RPOP: 112706.67RPOP: 112944.52====== RPOP ======
+  100000 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+113250.28 requests per second
+
+SADD: 114484.12SADD: 114295.22SADD: 114118.21SADD: 114123.29====== SADD ======
+  100000 requests completed in 0.88 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114155.25 requests per second
+
+HSET: 117384.62HSET: 116995.87HSET: 116739.78====== HSET ======
+  100000 requests completed in 0.86 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+116822.43 requests per second
+
+SPOP: 111424.78SPOP: 111881.54SPOP: 111595.44SPOP: 111745.08====== SPOP ======
+  100000 requests completed in 0.89 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+111731.84 requests per second
+
+LPUSH (needed to benchmark LRANGE): 113507.39LPUSH (needed to benchmark LRANGE): 114004.41LPUSH (needed to benchmark LRANGE): 114328.59====== LPUSH (needed to benchmark LRANGE) ======
+  100000 requests completed in 0.87 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+114416.48 requests per second
+
+LRANGE_100 (first 100 elements): 55222.22LRANGE_100 (first 100 elements): 55258.79LRANGE_100 (first 100 elements): 55262.88LRANGE_100 (first 100 elements): 55339.48LRANGE_100 (first 100 elements): 55621.83LRANGE_100 (first 100 elements): 55796.65LRANGE_100 (first 100 elements): 55946.90====== LRANGE_100 (first 100 elements) ======
+  100000 requests completed in 1.78 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 1 milliseconds
+56053.81 requests per second
+
+LRANGE_300 (first 300 elements): 22500.00LRANGE_300 (first 300 elements): 23893.94LRANGE_300 (first 300 elements): 23883.50LRANGE_300 (first 300 elements): 23895.43LRANGE_300 (first 300 elements): 23794.29LRANGE_300 (first 300 elements): 23693.52LRANGE_300 (first 300 elements): 23607.52LRANGE_300 (first 300 elements): 23565.69LRANGE_300 (first 300 elements): 23531.25LRANGE_300 (first 300 elements): 23496.25LRANGE_300 (first 300 elements): 23468.02LRANGE_300 (first 300 elements): 23440.91LRANGE_300 (first 300 elements): 23419.62LRANGE_300 (first 300 elements): 23412.61LRANGE_300 (first 300 elements): 23408.30LRANGE_300 (first 300 elements): 23404.57LRANGE_300 (first 300 elements): 23408.02LRANGE_300 (first 300 elements): 23421.61====== LRANGE_300 (first 300 elements) ======
+  100000 requests completed in 4.27 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+9.67% <= 1 milliseconds
+99.99% <= 2 milliseconds
+100.00% <= 2 milliseconds
+23424.69 requests per second
+
+LRANGE_500 (first 450 elements): 17380.95LRANGE_500 (first 450 elements): 17455.30LRANGE_500 (first 450 elements): 17480.88LRANGE_500 (first 450 elements): 17492.37LRANGE_500 (first 450 elements): 17472.02LRANGE_500 (first 450 elements): 17432.62LRANGE_500 (first 450 elements): 17417.53LRANGE_500 (first 450 elements): 17400.20LRANGE_500 (first 450 elements): 17391.67LRANGE_500 (first 450 elements): 17398.15LRANGE_500 (first 450 elements): 17400.51LRANGE_500 (first 450 elements): 17407.17LRANGE_500 (first 450 elements): 17413.11LRANGE_500 (first 450 elements): 17425.66LRANGE_500 (first 450 elements): 17430.37LRANGE_500 (first 450 elements): 17427.96LRANGE_500 (first 450 elements): 17434.71LRANGE_500 (first 450 elements): 17445.48LRANGE_500 (first 450 elements): 17439.91LRANGE_500 (first 450 elements): 17434.90LRANGE_500 (first 450 elements): 17424.64LRANGE_500 (first 450 elements): 17425.26LRANGE_500 (first 450 elements): 17417.64====== LRANGE_500 (first 450 elements) ======
+  100000 requests completed in 5.74 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+0.01% <= 1 milliseconds
+99.97% <= 2 milliseconds
+99.99% <= 3 milliseconds
+100.00% <= 3 milliseconds
+17418.57 requests per second
+
+LRANGE_600 (first 600 elements): 13692.64LRANGE_600 (first 600 elements): 13733.89LRANGE_600 (first 600 elements): 13746.92LRANGE_600 (first 600 elements): 13756.37LRANGE_600 (first 600 elements): 13760.36LRANGE_600 (first 600 elements): 13765.02LRANGE_600 (first 600 elements): 13767.19LRANGE_600 (first 600 elements): 13764.88LRANGE_600 (first 600 elements): 13768.82LRANGE_600 (first 600 elements): 13766.81LRANGE_600 (first 600 elements): 13770.58LRANGE_600 (first 600 elements): 13768.77LRANGE_600 (first 600 elements): 13766.92LRANGE_600 (first 600 elements): 13765.63LRANGE_600 (first 600 elements): 13764.25LRANGE_600 (first 600 elements): 13763.29LRANGE_600 (first 600 elements): 13762.44LRANGE_600 (first 600 elements): 13770.33LRANGE_600 (first 600 elements): 13779.33LRANGE_600 (first 600 elements): 13785.37LRANGE_600 (first 600 elements): 13792.98LRANGE_600 (first 600 elements): 13797.85LRANGE_600 (first 600 elements): 13804.42LRANGE_600 (first 600 elements): 13808.24LRANGE_600 (first 600 elements): 13813.87LRANGE_600 (first 600 elements): 13818.76LRANGE_600 (first 600 elements): 13821.92LRANGE_600 (first 600 elements): 13819.44====== LRANGE_600 (first 600 elements) ======
+  100000 requests completed in 7.24 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+0.01% <= 1 milliseconds
+99.82% <= 2 milliseconds
+99.96% <= 3 milliseconds
+99.98% <= 4 milliseconds
+100.00% <= 4 milliseconds
+13817.88 requests per second
+
+MSET (10 keys): -nanMSET (10 keys): 110200.00MSET (10 keys): 110010.00MSET (10 keys): 109948.00====== MSET (10 keys) ======
+  100000 requests completed in 0.91 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+100.00% <= 0 milliseconds
+110011.00 requests per second
+
+
+clr-redis

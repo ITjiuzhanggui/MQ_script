@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a0b5260b-8732-426b-9507-a444cf85f384" name="zds" url="http://10.239.50.119">
+        <fileTransfer host="10.239.50.119" port="22" rootFolder="/home/zds/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="ab9c4772-03da-4a3f-84bf-d27ea7cf1f84" name="zxh" url="http://10.239.85.41">
+        <fileTransfer host="10.239.85.41" port="22" rootFolder="/home/zxh/" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

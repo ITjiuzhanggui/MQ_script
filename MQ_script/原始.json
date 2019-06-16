@@ -1,0 +1,63 @@
+{
+	"default": {
+		"httpd": {},
+		"nginx": {},
+		"memcached": {},
+		"redis": {},
+		"php": {},
+		"python": {},
+		"golang": {},
+		"node": {},
+		"openjdk": {},
+		"ruby": {},
+		"tensorflow": {},
+		"mariadb": {},
+		"perl": {}
+	},
+	"clear": {
+		"httpd": {},
+		"nginx": {},
+		"memcached": {},
+		"redis": {},
+		"php": {},
+		"python": {},
+		"golang": {},
+		"node": {},
+		"openjdk": {},
+		"ruby": {},
+		"tensorflow": {},
+		"mariadb": {},
+		"perl": {}
+	},
+	"status_def": {
+		"httpd": {},
+		"golang": {},
+		"nginx": {},
+		"memcached": {},
+		"redis": {},
+		"php": {},
+		"python": {},
+		"node": {},
+		"openjdk": {},
+		"ruby": {},
+		"tensorflow": {},
+		"mariadb": {},
+		"perl": {}
+	},
+	"status_Clr": {
+		"clearlinux_version": {},
+		"httpd": {},
+		"golang": {},
+		"nginx": {},
+		"memcached": {},
+		"redis": {},
+		"php": {},
+		"python": {},
+		"node": {},
+		"openjdk": {},
+		"ruby": {},
+		"tensorflow": {},
+		"mariadb": {},
+		"perl": {}
+	}
+}

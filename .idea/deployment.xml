@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="zds">
+    <serverData>
+      <paths name="zds">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pycharm-2018.1/W_automation_obj" local="$USER_HOME$/automation_obJ" web="/" />
+            <mapping local="" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="zxh">
+        <serverdata>
+          <mappings>
+            <mapping local="$USER_HOME$/automation_obj" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

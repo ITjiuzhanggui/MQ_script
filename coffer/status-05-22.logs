@@ -1,0 +1,134 @@
+./status.sh "golang httpd memcached nginx node php python redis"
+[status] 
+[status] == Get general information of container images ==
+[status] [INFO] Base clearlinux image version:
+[status] 
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux          latest              0b806ef71738        8 days ago          150MB
+Installed version: 29280
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+golang              latest              7ced090ee82e        2 weeks ago         774MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/golang   latest              a4af8a4b6c9e        12 hours ago        901MB
+clearlinux/golang   <none>              a06f7467feaa        22 hours ago        899MB
+clearlinux/golang   <none>              ceadf5a2b811        36 hours ago        899MB
+clearlinux/golang   <none>              f116889e0e54        2 days ago          882MB
+default base layer Size:               101.000000 MB
+default microservice added layer Size: 674.010000 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 750.800000 MB
+Installed version: 29540
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+httpd               latest              b7cc370ac278        2 weeks ago         132MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/httpd    latest              8846743e7b1c        12 hours ago        265MB
+clearlinux/httpd    <none>              782f065d66b0        22 hours ago        263MB
+clearlinux/httpd    <none>              6a3753293c14        36 hours ago        262MB
+clearlinux/httpd    <none>              79ba98beafbc        2 days ago          244MB
+default base layer Size:               55.300000 MB
+default microservice added layer Size: 76.400133 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 114.800129 MB
+Installed version: 29540
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+memcached           latest              33546802fc24        2 weeks ago         62.2MB
+REPOSITORY             TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/memcached   latest              94681f6a02f9        22 hours ago        274MB
+clearlinux/memcached   <none>              cfed86d8bb30        36 hours ago        273MB
+clearlinux/memcached   <none>              19dc80b0baba        2 days ago          255MB
+default base layer Size:               55.300000 MB
+default microservice added layer Size: 6.890158 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 124.200488 MB
+Installed version: 29520
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+nginx               latest              53f3fd8007f7        2 weeks ago         109MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/nginx    latest              963cea47db12        23 hours ago        220MB
+clearlinux/nginx    <none>              074b726fd530        37 hours ago        218MB
+clearlinux/nginx    <none>              798d94583b31        2 days ago          200MB
+default base layer Size:               55.300000 MB
+default microservice added layer Size: 54.100022 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 69.960156 MB
+Installed version: 29520
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+node                latest              502d06d3bfdf        13 days ago         906MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/node     latest              a9baf5712d6b        24 hours ago        307MB
+clearlinux/node     <none>              268467ea7294        37 hours ago        306MB
+clearlinux/node     <none>              21d80ee3a592        2 days ago          288MB
+default base layer Size:               101.000000 MB
+default microservice added layer Size: 805.613000 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 157.800000 MB
+Installed version: 29520
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+php                 latest              e1dce93645bd        2 weeks ago         367MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/php      latest              e12a73b2cf03        23 hours ago        312MB
+clearlinux/php      <none>              cda4fc1da41c        37 hours ago        311MB
+clearlinux/php      <none>              810c2074a5f1        2 days ago          293MB
+default base layer Size:               55.300000 MB
+default microservice added layer Size: 311.007103 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 162.400000 MB
+Installed version: 29520
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+python              latest              a4cc999cf2aa        2 weeks ago         929MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/python   latest              6892a6a89504        21 hours ago        283MB
+clearlinux/python   <none>              610cb5c52bf9        35 hours ago        284MB
+clearlinux/python   <none>              ec2e498f55f9        2 days ago          266MB
+default base layer Size:               101.000000 MB
+default microservice added layer Size: 828.470032 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 133.100000 MB
+Installed version: 29530
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+redis               latest              d3e3588af517        6 days ago          95MB
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+clearlinux/redis    latest              b5cd09468ac4        22 hours ago        225MB
+clearlinux/redis    <none>              1584f0dcf0ac        36 hours ago        222MB
+clearlinux/redis    <none>              b40e541b2f81        2 days ago          204MB
+default base layer Size:               55.300000 MB
+default microservice added layer Size: 39.729374 MB
+clearlinux base layer Size:               150.000000 MB
+clearlinux microservice added layer Size: 75.120794 MB
+Installed version: 29530
+Version URL:       https://cdn.download.clearlinux.org/update/
+Content URL:       https://cdn.download.clearlinux.org/update/
+
+

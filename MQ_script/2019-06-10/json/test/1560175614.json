@@ -1,0 +1,139 @@
+{
+  "default": {
+    "httpd": {},
+    "nginx": {},
+    "memcached": {
+      "Sets": [
+        "Latency:1.78700",
+        "697.23 KB/sec"
+      ],
+      "Gets": [
+        "Latency:1.78400",
+        "2580.80 KB/sec"
+      ],
+      "Totals": [
+        "Latency:1.78400",
+        "3278.03 KB/sec"
+      ]
+    },
+    "redis": {},
+    "php": {
+      "Score": "460775"
+    },
+    "python": {
+      "Totals": [
+        {
+          "minimum": "2056"
+        },
+        {
+          "average": "2087"
+        }
+      ]
+    },
+    "golang": {
+      "BenchmarkBuild": "30108913456",
+      "BenchmarkGarbage": "1951604",
+      "BenchmarkHTTP": "6196",
+      "BenchmarkJSON": "8256073"
+    },
+    "node": {},
+    "openjdk": {},
+    "ruby": {
+      "app_answer": "0.029651",
+      "app_aobench": "44.164008",
+      "app_erb": "1.015813",
+      "app_factorial": "0.747978",
+      "app_fib": "0.392794",
+      "app_lc_fizzbuzz": "28.353712",
+      "app_mandelbrot": "1.183940",
+      "app_pentomino": "13.638865",
+      "app_raise": "0.198196",
+      "app_strconcat": "0.534957",
+      "app_tak": "0.594117",
+      "app_tarai": "0.487832"
+    },
+    "tensorflow": {}
+  },
+  "clear": {
+    "httpd": {},
+    "nginx": {},
+    "memcached": {
+      "Sets": [
+        "Latency:1.77100",
+        "700.10 KB/sec"
+      ],
+      "Gets": [
+        "Latency:1.77100",
+        "2591.41 KB/sec"
+      ],
+      "Totals": [
+        "Latency:1.77100",
+        "3291.51 KB/sec"
+      ]
+    },
+    "redis": {},
+    "php": {
+      "Score": "620529"
+    },
+    "python": {
+      "Totals": [
+        {
+          "minimum": "1499"
+        },
+        {
+          "average": "1516"
+        }
+      ]
+    },
+    "golang": {
+      "BenchmarkBuild": "30226934125",
+      "BenchmarkGarbage": "1942855",
+      "BenchmarkHTTP": "6032",
+      "BenchmarkJSON": "8214286"
+    },
+    "node": {},
+    "openjdk": {},
+    "ruby": {
+      "app_answer": "0.031031",
+      "app_aobench": "49.324922",
+      "app_erb": "1.083432",
+      "app_factorial": "0.776650",
+      "app_fib": "0.453045",
+      "app_lc_fizzbuzz": "27.169237",
+      "app_mandelbrot": "1.318397",
+      "app_pentomino": "14.561257",
+      "app_raise": "0.217706",
+      "app_strconcat": "0.583590",
+      "app_tak": "0.617102",
+      "app_tarai": "0.509032"
+    },
+    "tensorflow": {}
+  },
+  "status_def": {
+    "httpd": {},
+    "golang": {},
+    "nginx": {},
+    "memcached": {},
+    "redis": {},
+    "php": {},
+    "python": {},
+    "node": {},
+    "openjdk": {},
+    "ruby": {},
+    "tensorflow": {}
+  },
+  "status_Clr": {
+    "clearlinux_version": {},
+    "httpd": {},
+    "golang": {},
+    "nginx": {},
+    "memcached": {},
+    "redis": {},
+    "php": {},
+    "python": {},
+    "node": {},
+    "openjdk": {},
+    "ruby": {},
+    "tensorflow": {}
+  }
+}

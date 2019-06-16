@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/HL/.idea/HL.iml" filepath="$USER_HOME$/HL/.idea/HL.iml" />
+      <module fileurl="file://$USER_HOME$/automation_obj/.idea/automation_obj.iml" filepath="$USER_HOME$/automation_obj/.idea/automation_obj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/python_Code.iml" filepath="$PROJECT_DIR$/.idea/python_Code.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,282 @@
+{
+  "default": {
+    "httpd": {
+      "Time taken for tests": "1.280",
+      "Requests per second": "78098.34",
+      "Time per request": "0.640",
+      "Time per request(all)": "0.013",
+      "Transfer rate": "24735.84"
+    },
+    "nginx": {
+      "Time taken for tests": "2.337",
+      "Requests per second": "42796.24",
+      "Time per request": "1.168",
+      "Time per request(all)": "0.023",
+      "Transfer rate": "35563.97"
+    },
+    "memcached": {
+      "Sets": [
+        "Latency:0.61500",
+        "3018.45 KB/sec"
+      ],
+      "Gets": [
+        "Latency:0.59100",
+        "11172.74 KB/sec"
+      ],
+      "Totals": [
+        "Latency:0.59400",
+        "14191.19 KB/sec"
+      ]
+    },
+    "redis": {
+      "PING_INLINE": "105374.08",
+      "PING_BULK": "110011.00",
+      "SET": "110741.97",
+      "GET": "111234.70",
+      "INCR": "100200.40",
+      "LPUSH": "114942.53",
+      "RPUSH": "111358.58",
+      "LPOP": "113895.21",
+      "RPOP": "105263.16",
+      "SADD": "111358.58",
+      "HSET": "111856.82",
+      "SPOP": "113507.38",
+      "LPUSH (needed to benchmark LRANGE)": "113636.37",
+      "LRANGE_100 (first 100 elements)": "53276.50",
+      "LRANGE_300 (first 300 elements)": "23068.05",
+      "LRANGE_500 (first 450 elements)": "16661.11",
+      "LRANGE_600 (first 600 elements)": "13234.52",
+      "MSET (10 keys)": "118623.96"
+    },
+    "php": {
+      "phpbench": "411274"
+    },
+    "python": {
+      "Totals": [
+        {
+          "minimum": "1804"
+        },
+        {
+          "average": "1842"
+        }
+      ]
+    },
+    "golang": {
+      "BenchmarkBuild": "18407143075",
+      "BenchmarkGarbage": "1056068",
+      "BenchmarkHTTP": "3758",
+      "BenchmarkJSON": "5153451"
+    },
+    "node": {
+      "benchmark-node-octane": "36935"
+    },
+    "openjdk": {
+      "MyBenchmark.testMethod:Score": "4238196493.170",
+      "o.s.MyBenchmark.testMethod:Error": "10601638.560"
+    },
+    "ruby": {
+      "app_answer": "0.044348",
+      "app_aobench": "51.281925",
+      "app_erb": "0.844563",
+      "app_factorial": "0.475191",
+      "app_fib": "0.530356",
+      "app_lc_fizzbuzz": "21.972873",
+      "app_mandelbrot": "1.093966",
+      "app_pentomino": "13.256662",
+      "app_raise": "0.154343",
+      "app_strconcat": "0.615684",
+      "app_tak": "1.031634",
+      "app_tarai": "0.827405"
+    },
+    "tensorflow": {}
+  },
+  "clear": {
+    "httpd": {
+      "Time taken for tests": "1.153",
+      "Requests per second": "86699.81",
+      "Time per request": "0.577",
+      "Time per request(all)": "0.012",
+      "Transfer rate": "27482.87"
+    },
+    "nginx": {
+      "Time taken for tests": "0.700",
+      "Requests per second": "142761.90",
+      "Time per request": "0.350",
+      "Time per request(all)": "0.007",
+      "Transfer rate": "143870.45"
+    },
+    "memcached": {
+      "Sets": [
+        "Latency:0.62200",
+        "2007.89 KB/sec"
+      ],
+      "Gets": [
+        "Latency:0.61700",
+        "7432.18 KB/sec"
+      ],
+      "Totals": [
+        "Latency:0.61800",
+        "9440.07 KB/sec"
+      ]
+    },
+    "redis": {
+      "PING_INLINE": "111358.58",
+      "PING_BULK": "109170.30",
+      "SET": "110741.97",
+      "GET": "107991.36",
+      "INCR": "104166.67",
+      "LPUSH": "113507.38",
+      "RPUSH": "111607.14",
+      "LPOP": "112866.82",
+      "RPOP": "112485.94",
+      "SADD": "112485.94",
+      "HSET": "117508.81",
+      "SPOP": "113895.21",
+      "LPUSH (needed to benchmark LRANGE)": "111111.12",
+      "LRANGE_100 (first 100 elements)": "54171.18",
+      "LRANGE_300 (first 300 elements)": "22502.25",
+      "LRANGE_500 (first 450 elements)": "17188.04",
+      "LRANGE_600 (first 600 elements)": "13329.78",
+      "MSET (10 keys)": "104493.20"
+    },
+    "php": {
+      "Score": "350210"
+    },
+    "python": {},
+    "golang": {
+      "BenchmarkBuild": "18121279369",
+      "BenchmarkGarbage": "1043775",
+      "BenchmarkHTTP": "3697",
+      "BenchmarkJSON": "5043365"
+    },
+    "node": {
+      "benchmark-node-octane": "40080"
+    },
+    "openjdk": {
+      "MyBenchmark.testMethod:Score": "4329029653.170",
+      "o.s.MyBenchmark.testMethod:Error": "31464084.322"
+    },
+    "ruby": {
+      "app_answer": "0.046251",
+      "app_aobench": "54.399981",
+      "app_erb": "0.907898",
+      "app_factorial": "0.497144",
+      "app_fib": "0.535448",
+      "app_lc_fizzbuzz": "20.934545",
+      "app_mandelbrot": "1.153568",
+      "app_pentomino": "13.830053",
+      "app_raise": "0.169501",
+      "app_strconcat": "0.609606",
+      "app_tak": "1.114621",
+      "app_tarai": "0.848727"
+    },
+    "tensorflow": {}
+  },
+  "status_def": {
+    "httpd": {
+      "Total": "132MB",
+      "Base_Layer": "55.300000",
+      "MicroService_layer": "76.400133"
+    },
+    "golang": {
+      "Total": "774MB",
+      "Base_Layer": "101.000000",
+      "MicroService_layer": "674.010000"
+    },
+    "nginx": {
+      "Total": "109MB",
+      "Base_Layer": "55.300000",
+      "MicroService_layer": "54.100022"
+    },
+    "memcached": {
+      "Total": "62.2MB",
+      "Base_Layer": "55.300000",
+      "MicroService_layer": "6.900158"
+    },
+    "redis": {
+      "Total": "95MB",
+      "Base_Layer": "55.300000",
+      "MicroService_layer": "39.729374"
+    },
+    "php": {
+      "Total": "367MB",
+      "Base_Layer": "55.300000",
+      "MicroService_layer": "311.007103"
+    },
+    "python": {
+      "Total": "929MB",
+      "Base_Layer": "101.000000",
+      "MicroService_layer": "828.470032"
+    },
+    "node": {
+      "Total": "908MB",
+      "Base_Layer": "101.000000",
+      "MicroService_layer": "807.423000"
+    },
+    "openjdk": {
+      "Total": "470MB",
+      "Base_Layer": "118.000000",
+      "MicroService_layer": "351.600000"
+    },
+    "ruby": {
+      "Total": "870MB",
+      "Base_Layer": "101.000000",
+      "MicroService_layer": "769.310045"
+    },
+    "tensorflow": {}
+  },
+  "status_Clr": {
+    "clearlinux_version": {},
+    "httpd": {
+      "Total": "275MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "45.600129"
+    },
+    "golang": {
+      "Total": "911MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "682.000000"
+    },
+    "nginx": {
+      "Total": "231MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "1.920156"
+    },
+    "memcached": {
+      "Total": "231MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "1.760488"
+    },
+    "redis": {
+      "Total": "235MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "5.980794"
+    },
+    "php": {
+      "Total": "323MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "94.300000"
+    },
+    "python": {
+      "Total": "293MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "63.900000"
+    },
+    "node": {
+      "Total": "319MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "89.700000"
+    },
+    "openjdk": {
+      "Total": "808MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "579.000000"
+    },
+    "ruby": {
+      "Total": "267MB",
+      "Base_Layer": "150.000000",
+      "MicroService_layer": "38.000000"
+    },
+    "tensorflow": {}
+  }
+}
