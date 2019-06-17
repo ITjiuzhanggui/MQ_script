@@ -1472,7 +1472,7 @@ def StaClrRuby(lines):
 
 
 def main():
-    file_name = 'openjdk_1.log'
+    file_name = 'openjdk.log'
     status_log = 'status_LOG.log'
     lines = read_logs(file_name)
     # lnes = read_status_logs(status_log)

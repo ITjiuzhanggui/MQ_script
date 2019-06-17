@@ -518,10 +518,11 @@ def default_from_perl(lines):
         if i.startswith("Test: benchmarks/startup/noprog.b"):
             start = lines.index(i)
 
-        if i.startswith("Std-Dev:"):
+        # if i.startswith("Std-Dev:"):
+        if i.startswith("[perl] [INFO] Test clear docker image:\n"):
             end = lines.index(i)
 
-    for i in lines[start:end]:
+    for i in lines[start:end+15]:
         if i.startswith("Avg:"):
             num = re.findall("\d+\.?\d*", i)
 
@@ -1008,7 +1009,7 @@ def clr_from_perl(lines):
     """perl unit tests analysis"""
 
     for item in lines:
-        if item.startswith("[perl] [INFO] Test clear docker image:"):
+        if item.startswith("[perl] [INFO] Test clear docker image:\n"):
             start = lines.index(item)
 
     for item in lines[start:]:
@@ -1962,7 +1963,7 @@ def StaClrTensorflow(lines):
 
 
 def main():
-    file_name = 'ruby.log'
+    file_name = 'openjdk.log'
     test = read_logs(file_name)
 
     status_log = 'status_LOG.log'
@@ -1976,8 +1977,8 @@ def main():
     # default_from_python(test)
     # default_from_golang(test)
     # default_from_nodejs(test)
-    # default_from_openjdk(test)
-    default_from_ruby(test)
+    default_from_openjdk(test)
+    # default_from_ruby(test)
     # default_from_perl(test)
 
     # clr_from_httpd(test)
@@ -1988,7 +1989,7 @@ def main():
     # clr_from_golang(test)
     # clr_from_python(test)
     # clr_from_nodejs(test)
-    # clr_form_openjdk(test)
+    clr_form_openjdk(test)
     # clr_from_ruby(test)
     # clr_from_perl(test)
 
