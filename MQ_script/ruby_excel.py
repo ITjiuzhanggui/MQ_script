@@ -249,6 +249,28 @@ def Ruby(writer, df_json, loop_count):
               "string_index",
               "string_scan_re",
               "string_scan_str",
+              "to_chars-1",
+              "to_chars-10",
+              "to_chars-100",
+              "to_chars-1000",
+              "swapcase-1",
+              "swapcase-10",
+              "swapcase-100",
+              "swapcase-1000",
+              "upcase-1",
+              "upcase-10",
+              "upcase-100",
+              "upcase-1000",
+              """Time.strptime("28/Aug/2005:06:54:20 +0000", "%d/%b/%Y:%T %z")""",
+              """Time.strptime("1", "%s")""",
+              """Time.strptime("0 +0100", "%s %z")""",
+              """Time.strptime("0 UTC", "%s %z")""",
+              """Time.strptime("1.5", "%s.%N")""",
+              """Time.strptime("1.000000000001", "%s.%N")""",
+              """Time.strptime("20010203 -0200", "%Y%m%d %z")""",
+              """Time.strptime("20010203 UTC", "%Y%m%d %z")""",
+              """Time.strptime("2018-365", "%Y-%j")""",
+              """Time.strptime("2018-091", "%Y-%j")""",
               "time_subsec",
               "vm1_attr_ivar",
               "vm1_attr_ivar_set",
@@ -345,6 +367,9 @@ def Ruby(writer, df_json, loop_count):
               ]
 
     test_col = pd.Series(x_test)
+
+
+    default_col = pd.Series(default_ruby_list)
 
     default_ruby_list = [default_dict["app_answer"],
                          default_dict["app_answer"],
@@ -470,6 +495,28 @@ def Ruby(writer, df_json, loop_count):
                          default_dict["string_index"],
                          default_dict["string_scan_re"],
                          default_dict["string_scan_str"],
+                         default_dict["to_chars-1"],
+                         default_dict["to_chars-10"],
+                         default_dict["to_chars-100"],
+                         default_dict["to_chars-1000",
+                         default_dict["swapcase-1",
+                         default_dict["swapcase-10",
+                         default_dict["swapcase-100",
+                         default_dict["swapcase-1000",
+                         default_dict["upcase-1",
+                         default_dict["upcase-10",
+                         default_dict["upcase-100",
+                         default_dict["upcase-1000",
+                         default_dict["""Time.strptime("28/Aug/2005:06:54:20 +0000", "%d/%b/%Y:%T %z")""",
+                         default_dict["""Time.strptime("1", "%s")""",
+                         default_dict["""Time.strptime("0 +0100", "%s %z")""",
+                         default_dict["""Time.strptime("0 UTC", "%s %z")""",
+                         default_dict["""Time.strptime("1.5", "%s.%N")""",
+                         default_dict["""Time.strptime("1.000000000001", "%s.%N")""",
+                         default_dict["""Time.strptime("20010203 -0200", "%Y%m%d %z")""",
+                         default_dict["""Time.strptime("20010203 UTC", "%Y%m%d %z")""",
+                         default_dict["""Time.strptime("2018-365", "%Y-%j")""",
+                         """Time.strptime("2018-091", "%Y-%j")""",
                          default_dict["time_subsec"],
                          default_dict["vm1_attr_ivar"],
                          default_dict["vm1_attr_ivar_set"],
@@ -563,9 +610,6 @@ def Ruby(writer, df_json, loop_count):
                          default_dict["vm_thread_sized_queue3"],
                          default_dict["vm_thread_sized_queue4"]
                          ]
-
-    default_col = pd.Series(default_ruby_list)
-
     clear_ruby_list = [default_dict["app_answer"],
                        default_dict["app_answer"],
                        default_dict["app_erb"],
@@ -798,16 +842,16 @@ def Ruby(writer, df_json, loop_count):
 
 if __name__ == '__main__':
     loop_count = 0
-    status_json_filename = r"C:\Users\xinhuizx\python_Code\MQ_script\2019-06-10\json\status\1560175612.json"
+    # status_json_filename = r"C:\Users\xinhuizx\python_Code\MQ_script\2019-06-10\json\status\1560175612.json"
     writer = pd.ExcelWriter(r"C:\Users\xinhuizx\python_Code\MQ_script\MQ_tset.xlsx")
 
     # read_status_log(status_json_filename)
-    for root_dir, _, files in os.walk(r"C:\Users\xinhuizx\python_Code\MQ_script\2019-06-10\json\test"):
+    for root_dir, _, files in os.walk(r"C:\Users\xinhuizx\python_Code\MQ_script\2019-06-18-runc\json\test"):
         for json_filename in files:
             full_file_name = os.path.join(root_dir, json_filename)
             df_json = pd.read_json(full_file_name)
             # df_json = pd.read_json(r"C:\Users\xinhuizx\python_Code\MQ_scr\data_LOG.json")
-            # Ruby(writer, df_json, loop_count)
+            Ruby(writer, df_json, loop_count)
             loop_count += 1
 
     writer.save()

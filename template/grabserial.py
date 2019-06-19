@@ -27,9 +27,9 @@
 #      output from the serial port (with timing data) is sent to outputfd
 #  2015.04.23 - Version 1.8.1 - remove instructions for applying LICENSE text
 #    to new files, and add no-warranty language to grabserial.
-#  2015.03.10 - Version 1.8.0 - add -o option for saving output to a file
+#  2015.1.log.10 - Version 1.8.0 - add -o option for saving output to a file
 #    add -T option for absolute times. Both contributed by ramaxlo
-#  2015.03.10 - Version 1.7.1 - add line feed to instantpat result line
+#  2015.1.log.10 - Version 1.7.1 - add line feed to instantpat result line
 #  2014.09.28 - Version 1.7.0 - add option for force reset for USB serial
 #    contributed by John Mehaffey <mehaf@gedanken.com>
 #  2014.01.07 - Version 1.6.0 - add option for exiting based on a

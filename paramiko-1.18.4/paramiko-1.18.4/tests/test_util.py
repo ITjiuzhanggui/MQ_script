@@ -473,7 +473,7 @@ Host param3 parara
         has_bytes = b("has \7\3 bytes")
         safe_vanilla = safe_string(vanilla)
         safe_has_bytes = safe_string(has_bytes)
-        expected_bytes = b("has %07%03 bytes")
+        expected_bytes = b("has %07%1.log bytes")
         err = "{0!r} != {1!r}"
         assert safe_vanilla == vanilla, err.format(safe_vanilla, vanilla)
         assert safe_has_bytes == expected_bytes, \

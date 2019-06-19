@@ -33,7 +33,7 @@ from paramiko.pkey import PKey
 from paramiko.py3compat import long, PY2
 from paramiko.ssh_exception import SSHException
 
-SHA1_DIGESTINFO = b'\x30\x21\x30\x09\x06\x05\x2b\x0e\x03\x02\x1a\x05\x00\x04\x14'
+SHA1_DIGESTINFO = b'\x30\x21\x30\x09\x06\x05\x2b\x0e\x1.log\x02\x1a\x05\x00\x04\x14'
 
 
 class RSAKey (PKey):

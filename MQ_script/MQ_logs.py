@@ -3,7 +3,7 @@
 import os, sys
 import re
 import json
-from pprint import pprint
+
 
 data = {
     "default":
@@ -892,24 +892,29 @@ def clr_from_nodejs(lines):
 
 def clr_form_openjdk(lines):
     """perl unit tests analysis"""
-
+    # start = end = 0
     for item in lines:
+        # print(item)
         if item.startswith("[openjdk] [INFO] Test clear docker image:\n"):
+            # print(item)
             start = lines.index(item)
-
+            # print(start)
     for i in lines[start:]:
-        if i.startswith("Benchmark"):
-            end = lines[start:].index(i) + start
-
-    for item in lines[start:end + 8]:
+        # print(i)
         if i.startswith("MyBenchmark.testMethod"):
-            num = re.findall("\d+\.?\d*", i)
+            end = lines[start:].index(i) + start
+            # print(end)
+    if item in lines[start:end+2]:
+        # print(item)
+        if item.startswith("MyBenchmark.testMethod"):
+            num = re.findall("\d+\.?\d*", item)
+            # print(num)
             data.get("clear").get("openjdk").update(
                 {"MyBenchmark.testMethod.Score": num[-2]}
             )
 
-        if i.startswith("MyBenchmark.testMethod"):
-            num = re.findall("\d+\.?\d*", i)
+        if item.startswith("MyBenchmark.testMethod"):
+            num = re.findall("\d+\.?\d*", item)
             data.get("clear").get("openjdk").update(
                 {"MyBenchmark.testMethod.Error": num[-1]}
             )
@@ -2026,4 +2031,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    pprint(data)
+

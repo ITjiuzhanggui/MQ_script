@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import time
-import os
-from logs import SetLog
+import osfrom
+
+logs
+import SetLog
 from core.abstract import exect_contest
 from conf import ConfManagement
 from core.defaultslog import *
@@ -61,9 +63,9 @@ make_path = auto_path + '/1.sh'
 make_path += " %s make status" % auto_path
 get_log_status(make_path, path)
 
-
 test_cmd = ["make httpd", "make nginx", "make memcached", "make redis", "make php", "make python", "make node",
-            "make golang", "make openjdk", "make tensorflow", "make mariadb", "make perl", "make ruby"]
+            "make golang", "make postgres", "make tensorflow", "make mariadb", "make perl", "make openjdk",
+            "make ruby"]
 
 
 def get_log_test(cmd, logs_patg):

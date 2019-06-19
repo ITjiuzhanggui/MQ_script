@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ $# -gt 1 ]
+then
+   echo "wrong parameter count, only 1 log file could be accepted."
+   return
+fi
+
+sed "/+ /d" $1 > ruby_bench_perf.csv
+sed -i '/Comparison:/,/^$/d' ruby_bench_perf.csv
+sed -i '/Warming/,/Calculating/d' ruby_bench_perf.csv
+sed -i '/^$/d' ruby_bench_perf.csv
+sed -i '/Calculating/d' ruby_bench_perf.csv
+sed -i 's/s - .*$//g' ruby_bench_perf.csv
+sed -i 's/^ *//g' ruby_bench_perf.csv
+sed -i 's/[ ][ ][ ]*/\t/g' ruby_bench_perf.csv
+
+echo "output : ruby_bench_perf.csv"
+~
